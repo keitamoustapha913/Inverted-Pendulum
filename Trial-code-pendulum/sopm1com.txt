@@ -1,0 +1,177 @@
+"""
+
+For 2000mbar
+
+ RESTART: C:\Users\KEITA MOUSTAPHA\Documents\Master AM\M2 AM\S9\Collective Inverted Pendulum\Dossier Stage LARIPPE Thomas\Python Scripts\Communication_COM_1.py 
+<class 'str'>
+Line : 
+<class 'str'>
+Line : b'\xfeP'
+Line : fe50 
+ 
+
+<class 'int'>
+num little : 20734
+num big : 65104
+<class 'str'>
+Line : b'\xfeS'
+Line : fe53 
+ 
+
+<class 'int'>
+num little : 21502
+num big : 65107
+<class 'str'>
+Line : b'\xfeW'
+Line : fe57 
+ 
+
+<class 'int'>
+num little : 22526
+num big : 65111
+<class 'str'>
+Line : b'\xfeV'
+Line : fe56 
+ 
+
+<class 'int'>
+num little : 22270
+num big : 65110
+<class 'str'>
+Line : b'\xfeQ'
+Line : fe51 
+ 
+
+<class 'int'>
+num little : 20990
+num big : 65105
+<class 'str'>
+Line : b'\xfeV'
+Line : fe56 
+ 
+
+<class 'int'>
+num little : 22270
+num big : 65110
+<class 'str'>
+Line : b'\xfeW'
+Line : fe57 
+ 
+
+<class 'int'>
+num little : 22526
+num big : 65111
+<class 'str'>
+Line : b'\xfeP'
+Line : fe50 
+ 
+
+<class 'int'>
+num little : 20734
+num big : 65104
+<class 'str'>
+Line : b'\xfeQ'
+Line : fe51 
+ 
+
+<class 'int'>
+num little : 20990
+num big : 65105
+<class 'str'>
+Line : b'\xfeU'
+Line : fe55 
+ 
+
+<class 'int'>
+num little : 22014
+num big : 65109
+
+
+
+For 0mbar
+
+ RESTART: C:\Users\KEITA MOUSTAPHA\Documents\Master AM\M2 AM\S9\Collective Inverted Pendulum\Dossier Stage LARIPPE Thomas\Python Scripts\Communication_COM_1.py 
+<class 'str'>
+Line : 
+<class 'str'>
+Line : b'\x00\x16'
+Line : 0016 
+ 
+
+<class 'int'>
+num little : 5632
+num big : 22
+<class 'str'>
+Line : b'\x00\x14'
+Line : 0014 
+ 
+
+<class 'int'>
+num little : 5120
+num big : 20
+<class 'str'>
+Line : b'\x00\x17'
+Line : 0017 
+ 
+
+<class 'int'>
+num little : 5888
+num big : 23
+<class 'str'>
+Line : b'\x00\x0f'
+Line : 000f 
+ 
+
+<class 'int'>
+num little : 3840
+num big : 15
+<class 'str'>
+Line : b'\x00\x18'
+Line : 0018 
+ 
+
+<class 'int'>
+num little : 6144
+num big : 24
+<class 'str'>
+Line : b'\x00\x14'
+Line : 0014 
+ 
+
+<class 'int'>
+num little : 5120
+num big : 20
+<class 'str'>
+Line : b'\x00\x14'
+Line : 0014 
+ 
+
+<class 'int'>
+num little : 5120
+num big : 20
+<class 'str'>
+Line : b'\x00\x10'
+Line : 0010 
+ 
+
+<class 'int'>
+num little : 4096
+num big : 16
+<class 'str'>
+Line : b'\x00\x13'
+Line : 0013 
+ 
+
+<class 'int'>
+num little : 4864
+num big : 19
+<class 'str'>
+Line : b'\x00\x16'
+Line : 0016 
+ 
+
+<class 'int'>
+num little : 5632
+num big : 22
+
+"""

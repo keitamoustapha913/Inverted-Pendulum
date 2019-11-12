@@ -1,0 +1,13 @@
+07/11/2019 13.11 
+
+RESTART: C:\Users\KEITA MOUSTAPHA\Documents\Master AM\M2 AM\S9\Collective Inverted Pendulum\mypy\findlorentz.py 
+ Lorenz COM List =  ['COM3', 'COM4', 'COM5', 'COM6']
+Lorenz [0]  is opened
+	 numero [0]  =  0
+Lorenz [1]  is opened
+	 numero [1]  =  0
+Lorenz [2]  is opened
+	 numero [2]  =  13
+Lorenz [3]  is opened
+	 numero [3]  =  14
+DONE

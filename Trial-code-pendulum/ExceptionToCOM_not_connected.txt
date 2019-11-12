@@ -1,0 +1,165 @@
+Date: 07/11/2019 12:41
+----------------------------------code 'findlorentz.py'-------------------------------------
+
+def createLorenzSerials(LorenzCOM):
+    print('Num of Lorenz = ',len(LorenzCOM) )
+    LorenzSerial = []
+    if len(LorenzCOM) == 4:
+        print('All LorenzCOM connections detected ' )
+        for i in range(len(LorenzCOM)):
+            #LorenzSerial[i] = serial.Serial(port=LorenzCOM[i], baudrate=115200, timeout= 0.1)
+            LorenzSerial.append( serial.Serial(port=LorenzCOM[i], baudrate=115200, timeout= 0.1) )
+            print( 'LorenzSerial',[i],' = ',LorenzSerial[i])
+            LorenzSerial[i].close()
+            print( 'LorenzSerial',[i], 'closed')
+        #print list of Lorenz's serial ports
+        print( 'LorenzSerial = ', LorenzSerial ) 
+------------------------------------------------------------------------------------
+
+RESTART: C:\Users\KEITA MOUSTAPHA\Documents\Master AM\M2 AM\S9\Collective Inverted Pendulum\mypy\findlorentz.py 
+port 0  =  COM3 - Lorenz USB sensor interface Port (COM3) 
+
+strPort 0  =  COM3 - Lorenz USB sensor interface Port (COM3)
+splitPort =  ['COM3', '-', 'Lorenz', 'USB', 'sensor', 'interface', 'Port', '(COM3)']
+commPort =  COM3 
+ 
+
+port 1  =  COM4 - Lorenz USB sensor interface Port (COM4) 
+
+strPort 1  =  COM4 - Lorenz USB sensor interface Port (COM4)
+splitPort =  ['COM4', '-', 'Lorenz', 'USB', 'sensor', 'interface', 'Port', '(COM4)']
+commPort =  COM4 
+ 
+
+port 2  =  COM5 - Lorenz USB sensor interface Port (COM5) 
+
+strPort 2  =  COM5 - Lorenz USB sensor interface Port (COM5)
+splitPort =  ['COM5', '-', 'Lorenz', 'USB', 'sensor', 'interface', 'Port', '(COM5)']
+commPort =  COM5 
+ 
+
+port 3  =  COM6 - Lorenz USB sensor interface Port (COM6) 
+
+strPort 3  =  COM6 - Lorenz USB sensor interface Port (COM6)
+splitPort =  ['COM6', '-', 'Lorenz', 'USB', 'sensor', 'interface', 'Port', '(COM6)']
+commPort =  COM6 
+ 
+
+ Lorenz COM List =  ['COM3', 'COM4', 'COM5', 'COM6']
+ Lorenz COM List =  ['COM3', 'COM4', 'COM5', 'COM6']
+Num of Lorenz =  4
+All LorenzCOM connections detected 
+LorenzSerial [0]  =  Serial<id=0x24bcbed7148, open=True>(port='COM3', baudrate=115200, bytesize=8, parity='N', stopbits=1, timeout=0.1, xonxoff=False, rtscts=False, dsrdtr=False)
+LorenzSerial [0] closed
+LorenzSerial [1]  =  Serial<id=0x24bcbed7188, open=True>(port='COM4', baudrate=115200, bytesize=8, parity='N', stopbits=1, timeout=0.1, xonxoff=False, rtscts=False, dsrdtr=False)
+LorenzSerial [1] closed
+Traceback (most recent call last):
+  File "C:\Users\KEITA MOUSTAPHA\Documents\Master AM\M2 AM\S9\Collective Inverted Pendulum\mypy\findlorentz.py", line 53, in <module>
+    createLorenzSerials(LorenzCOM)
+  File "C:\Users\KEITA MOUSTAPHA\Documents\Master AM\M2 AM\S9\Collective Inverted Pendulum\mypy\findlorentz.py", line 40, in createLorenzSerials
+    LorenzSerial.append( serial.Serial(port=LorenzCOM[i], baudrate=115200, timeout= 0.1) )
+  File "C:\Python37\lib\site-packages\serial\serialwin32.py", line 31, in __init__
+    super(Serial, self).__init__(*args, **kwargs)
+  File "C:\Python37\lib\site-packages\serial\serialutil.py", line 240, in __init__
+    self.open()
+  File "C:\Python37\lib\site-packages\serial\serialwin32.py", line 62, in open
+    raise SerialException("could not open port {!r}: {!r}".format(self.portstr, ctypes.WinError()))
+serial.serialutil.SerialException: could not open port 'COM5': PermissionError(13, 'A device attached to the system is not functioning.', None, 31)
+>>> 
+ RESTART: C:\Users\KEITA MOUSTAPHA\Documents\Master AM\M2 AM\S9\Collective Inverted Pendulum\mypy\findlorentz.py 
+port 0  =  COM3 - Lorenz USB sensor interface Port (COM3) 
+
+strPort 0  =  COM3 - Lorenz USB sensor interface Port (COM3)
+splitPort =  ['COM3', '-', 'Lorenz', 'USB', 'sensor', 'interface', 'Port', '(COM3)']
+commPort =  COM3 
+ 
+
+port 1  =  COM4 - Lorenz USB sensor interface Port (COM4) 
+
+strPort 1  =  COM4 - Lorenz USB sensor interface Port (COM4)
+splitPort =  ['COM4', '-', 'Lorenz', 'USB', 'sensor', 'interface', 'Port', '(COM4)']
+commPort =  COM4 
+ 
+
+port 2  =  COM5 - Lorenz USB sensor interface Port (COM5) 
+
+strPort 2  =  COM5 - Lorenz USB sensor interface Port (COM5)
+splitPort =  ['COM5', '-', 'Lorenz', 'USB', 'sensor', 'interface', 'Port', '(COM5)']
+commPort =  COM5 
+ 
+
+port 3  =  COM6 - Lorenz USB sensor interface Port (COM6) 
+
+strPort 3  =  COM6 - Lorenz USB sensor interface Port (COM6)
+splitPort =  ['COM6', '-', 'Lorenz', 'USB', 'sensor', 'interface', 'Port', '(COM6)']
+commPort =  COM6 
+ 
+
+ Lorenz COM List =  ['COM3', 'COM4', 'COM5', 'COM6']
+ Lorenz COM List =  ['COM3', 'COM4', 'COM5', 'COM6']
+Num of Lorenz =  4
+All LorenzCOM connections detected 
+LorenzSerial [0]  =  Serial<id=0x16d7dc06ac8, open=True>(port='COM3', baudrate=115200, bytesize=8, parity='N', stopbits=1, timeout=0.1, xonxoff=False, rtscts=False, dsrdtr=False)
+LorenzSerial [0] closed
+LorenzSerial [1]  =  Serial<id=0x16d7e0e85c8, open=True>(port='COM4', baudrate=115200, bytesize=8, parity='N', stopbits=1, timeout=0.1, xonxoff=False, rtscts=False, dsrdtr=False)
+LorenzSerial [1] closed
+Traceback (most recent call last):
+  File "C:\Users\KEITA MOUSTAPHA\Documents\Master AM\M2 AM\S9\Collective Inverted Pendulum\mypy\findlorentz.py", line 54, in <module>
+    createLorenzSerials(LorenzCOM)
+  File "C:\Users\KEITA MOUSTAPHA\Documents\Master AM\M2 AM\S9\Collective Inverted Pendulum\mypy\findlorentz.py", line 40, in createLorenzSerials
+    LorenzSerial.append( serial.Serial(port=LorenzCOM[i], baudrate=115200, timeout= 0.1) )
+  File "C:\Python37\lib\site-packages\serial\serialwin32.py", line 31, in __init__
+    super(Serial, self).__init__(*args, **kwargs)
+  File "C:\Python37\lib\site-packages\serial\serialutil.py", line 240, in __init__
+    self.open()
+  File "C:\Python37\lib\site-packages\serial\serialwin32.py", line 62, in open
+    raise SerialException("could not open port {!r}: {!r}".format(self.portstr, ctypes.WinError()))
+serial.serialutil.SerialException: could not open port 'COM5': PermissionError(13, 'A device attached to the system is not functioning.', None, 31)
+>>> 
+ RESTART: C:\Users\KEITA MOUSTAPHA\Documents\Master AM\M2 AM\S9\Collective Inverted Pendulum\mypy\findlorentz.py 
+port 0  =  COM3 - Lorenz USB sensor interface Port (COM3) 
+
+strPort 0  =  COM3 - Lorenz USB sensor interface Port (COM3)
+splitPort =  ['COM3', '-', 'Lorenz', 'USB', 'sensor', 'interface', 'Port', '(COM3)']
+commPort =  COM3 
+ 
+
+port 1  =  COM4 - Lorenz USB sensor interface Port (COM4) 
+
+strPort 1  =  COM4 - Lorenz USB sensor interface Port (COM4)
+splitPort =  ['COM4', '-', 'Lorenz', 'USB', 'sensor', 'interface', 'Port', '(COM4)']
+commPort =  COM4 
+ 
+
+port 2  =  COM5 - Lorenz USB sensor interface Port (COM5) 
+
+strPort 2  =  COM5 - Lorenz USB sensor interface Port (COM5)
+splitPort =  ['COM5', '-', 'Lorenz', 'USB', 'sensor', 'interface', 'Port', '(COM5)']
+commPort =  COM5 
+ 
+
+port 3  =  COM6 - Lorenz USB sensor interface Port (COM6) 
+
+strPort 3  =  COM6 - Lorenz USB sensor interface Port (COM6)
+splitPort =  ['COM6', '-', 'Lorenz', 'USB', 'sensor', 'interface', 'Port', '(COM6)']
+commPort =  COM6 
+ 
+
+ Lorenz COM List =  ['COM3', 'COM4', 'COM5', 'COM6']
+ Lorenz COM List =  ['COM3', 'COM4', 'COM5', 'COM6']
+Num of Lorenz =  4
+All LorenzCOM connections detected 
+LorenzSerial [0]  =  Serial<id=0x1c6d366be48, open=True>(port='COM3', baudrate=115200, bytesize=8, parity='N', stopbits=1, timeout=0.1, xonxoff=False, rtscts=False, dsrdtr=False)
+LorenzSerial [0] closed
+LorenzSerial [1]  =  Serial<id=0x1c6d3b49cc8, open=True>(port='COM4', baudrate=115200, bytesize=8, parity='N', stopbits=1, timeout=0.1, xonxoff=False, rtscts=False, dsrdtr=False)
+LorenzSerial [1] closed
+LorenzSerial [2]  =  Serial<id=0x1c6d3b49e88, open=True>(port='COM5', baudrate=115200, bytesize=8, parity='N', stopbits=1, timeout=0.1, xonxoff=False, rtscts=False, dsrdtr=False)
+LorenzSerial [2] closed
+LorenzSerial [3]  =  Serial<id=0x1c6d3b49d88, open=True>(port='COM6', baudrate=115200, bytesize=8, parity='N', stopbits=1, timeout=0.1, xonxoff=False, rtscts=False, dsrdtr=False)
+LorenzSerial [3] closed
+LorenzSerial =  [Serial<id=0x1c6d366be48, open=False>(port='COM3', baudrate=115200, bytesize=8, parity='N', stopbits=1, timeout=0.1, xonxoff=False, rtscts=False, dsrdtr=False), Serial<id=0x1c6d3b49cc8, open=False>(port='COM4', baudrate=115200, bytesize=8, parity='N', stopbits=1, timeout=0.1, xonxoff=False, rtscts=False, dsrdtr=False), Serial<id=0x1c6d3b49e88, open=False>(port='COM5', baudrate=115200, bytesize=8, parity='N', stopbits=1, timeout=0.1, xonxoff=False, rtscts=False, dsrdtr=False), Serial<id=0x1c6d3b49d88, open=False>(port='COM6', baudrate=115200, bytesize=8, parity='N', stopbits=1, timeout=0.1, xonxoff=False, rtscts=False, dsrdtr=False)]
+DONE
+
+--------------------------------------Hardware solution-------------------------------------------------------------------------
+Corrected the Exception by replugging the usb
+- Need to find a software approach to solve this by exception raising and printing the message and jumping to next step

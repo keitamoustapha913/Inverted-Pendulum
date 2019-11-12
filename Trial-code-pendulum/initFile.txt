@@ -1,0 +1,108 @@
+07/11/2019  18.22
+
+Python 3.7.4 (tags/v3.7.4:e09359112e, Jul  8 2019, 20:34:20) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> 
+ RESTART: C:/Users/KEITA MOUSTAPHA/Documents/Master AM/M2 AM/S9/Collective Inverted Pendulum/mypy/findlorentzCopy.py 
+iniHeader =  ['numVariable', '4\n']
+numVariable 4
+iniReadLines =  4
+variable =  ['numPoints', '5\n']
+variable =  ['numRowsCollect', '50\n']
+variable =  ['operator', 'Bob\n']
+variable =  ['Type', 'Voltage']
+ini_data_result =  {'numPoints': '5', 'numRowsCollect': '50', 'operator': 'Bob', 'Type': 'Voltage'}
+ Lorenz COM List =  ['COM3', 'COM4', 'COM5', 'COM6']
+time clock =  <built-in function clock>
+time clock =  <built-in function clock>
+time clock =  <built-in function clock>
+time clock =  <built-in function clock>
+Lorenz [0]  is opened
+	 dec_value [0]  =  0
+Lorenz [1]  is opened
+	 dec_value [1]  =  0
+Lorenz [2]  is opened
+	 dec_value [2]  =  5
+Lorenz [3]  is opened
+	 dec_value [3]  =  24
+Sensor_values =  [0, 0, 5, 24]
+Lorenz [0]  is opened
+	 dec_value [0]  =  0
+Lorenz [1]  is opened
+	 dec_value [1]  =  0
+Lorenz [2]  is opened
+	 dec_value [2]  =  6
+Lorenz [3]  is opened
+	 dec_value [3]  =  34
+Sensor_values =  [0, 0, 5, 24, 0, 0, 6, 34]
+Lorenz [0]  is opened
+	 dec_value [0]  =  0
+Lorenz [1]  is opened
+	 dec_value [1]  =  0
+Lorenz [2]  is opened
+	 dec_value [2]  =  6
+Lorenz [3]  is opened
+	 dec_value [3]  =  20
+Sensor_values =  [0, 0, 5, 24, 0, 0, 6, 34, 0, 0, 6, 20]
+Lorenz [0]  is opened
+	 dec_value [0]  =  0
+Lorenz [1]  is opened
+	 dec_value [1]  =  0
+Lorenz [2]  is opened
+	 dec_value [2]  =  10
+Lorenz [3]  is opened
+	 dec_value [3]  =  22
+Sensor_values =  [0, 0, 5, 24, 0, 0, 6, 34, 0, 0, 6, 20, 0, 0, 10, 22]
+DONE
+>>> 
+ RESTART: C:/Users/KEITA MOUSTAPHA/Documents/Master AM/M2 AM/S9/Collective Inverted Pendulum/mypy/findlorentzCopy.py 
+iniHeader =  ['numVariable', '4\n']
+numVariable 4
+iniReadLines =  4
+variable =  ['numPoints', '5\n']
+variable =  ['numRowsCollect', '50\n']
+variable =  ['operator', 'Bob\n']
+variable =  ['Type', 'Voltage']
+ini_data_result =  {'numPoints': '5', 'numRowsCollect': '50', 'operator': 'Bob', 'Type': 'Voltage'}
+ Lorenz COM List =  ['COM3', 'COM4', 'COM5', 'COM6']
+time clock =  <built-in function clock>
+time clock =  <built-in function clock>
+time clock =  <built-in function clock>
+time clock =  <built-in function clock>
+Lorenz [0]  is opened
+	 dec_value [0]  =  0
+Lorenz [1]  is opened
+	 dec_value [1]  =  0
+Lorenz [2]  is opened
+	 dec_value [2]  =  1
+Lorenz [3]  is opened
+	 dec_value [3]  =  21
+Sensor_values =  [0, 0, 1, 21]
+Lorenz [0]  is opened
+	 dec_value [0]  =  0
+Lorenz [1]  is opened
+	 dec_value [1]  =  0
+Lorenz [2]  is opened
+	 dec_value [2]  =  0
+Lorenz [3]  is opened
+	 dec_value [3]  =  21
+Sensor_values =  [0, 0, 1, 21, 0, 0, 0, 21]
+Lorenz [0]  is opened
+	 dec_value [0]  =  0
+Lorenz [1]  is opened
+	 dec_value [1]  =  0
+Lorenz [2]  is opened
+	 dec_value [2]  =  1
+Lorenz [3]  is opened
+	 dec_value [3]  =  31
+Sensor_values =  [0, 0, 1, 21, 0, 0, 0, 21, 0, 0, 1, 31]
+Lorenz [0]  is opened
+	 dec_value [0]  =  0
+Lorenz [1]  is opened
+	 dec_value [1]  =  0
+Lorenz [2]  is opened
+	 dec_value [2]  =  10
+Lorenz [3]  is opened
+	 dec_value [3]  =  33
+Sensor_values =  [0, 0, 1, 21, 0, 0, 0, 21, 0, 0, 1, 31, 0, 0, 10, 33]
+DONE
