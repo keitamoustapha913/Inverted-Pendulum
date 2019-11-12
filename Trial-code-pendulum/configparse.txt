@@ -1,0 +1,11 @@
+$ python ./Trial-code-pendulum/usingConfigparser.py 
+['example.ini']
+Sections :  ['bitbucket.org', 'topsecret.server.com']
+<class 'str'>
+DEFAULT :  45
+DEFAULT :  9
+['example.ini']
+Sections :  ['bitbucket.org', 'topsecret.server.com']
+<class 'str'>
+DEFAULT :  50
+DEFAULT :  20
