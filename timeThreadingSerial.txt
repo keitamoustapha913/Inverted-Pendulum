@@ -1,0 +1,23 @@
+With the use of threading we get faster access to the serials
+
+
+
+
+$ python ./Trial-code-pendulum/usingthreading.py
+ Lorenz COM List =  ['COM3', 'COM4', 'COM5', 'COM6']
+         numero [0]  =  35
+         numero [1]  =  0
+         numero [2]  =  0
+         numero [3]  =  5
+Without Threading Finished in 0.4268634 seconds
+         numero  =  5
+         numero  =  26
+         numero  =  0 
+         numero  =  0
+with Process Finished in 0.3686994 seconds
+         numero  =  0
+         numero  =  21
+         numero  =  3
+         numero  =  0
+with Thread Finished in 0.13129880000000005 seconds
+DONE

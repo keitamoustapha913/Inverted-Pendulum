@@ -59,14 +59,14 @@ def Thread_send_polling(LorenzSerial):
     read_ab = [ 0x47 ]
 
     LorenzSerial.open()
-    print('Lorenz',LorenzSerial,' is opened')
+    # print('Lorenz',LorenzSerial,' is opened')
     LorenzSerial.write(poll_start)
     emptyline = LorenzSerial.read(2)
     LorenzSerial.write(read_a)
     line = LorenzSerial.read(2)
     numero = int.from_bytes(line,  byteorder = 'big' )
     LorenzSerial.close()
-    print ('\t numero',LorenzSerial,' = ',numero)
+    print ('\t numero  = ',numero)
 
 
 # To send command by Speed Optimized Polling Mode without threading
@@ -80,7 +80,7 @@ def send_polling(LorenzSerial):
     t1 = time.perf_counter()
     for i in range(len(LorenzSerial)):
         LorenzSerial[i].open()
-        print('Lorenz',[i],' is opened')
+        # print('Lorenz',[i],' is opened')
         LorenzSerial[i].write(poll_start)
         emptyline = LorenzSerial[i].read(2)
         LorenzSerial[i].write(read_a)
@@ -95,30 +95,41 @@ def send_polling(LorenzSerial):
 LorenzCOM = []
 LorenzSerial = []
 
-foundPorts = get_ports()        
-connectPort = findLorenz(foundPorts)
-print( " Lorenz COM List = ", LorenzCOM)
 
-if connectPort != 'None':
-    createLorenzSerials(LorenzCOM)
-    #print ( '\n \n','LorenzSerial outside = ', LorenzSerial )
-    send_polling(LorenzSerial)
-    t1 = time.perf_counter()
+if __name__ == "__main__":
 
-    with concurrent.futures.ThreadPoolExecutor() as executor:
-        executor.map(Thread_send_polling, LorenzSerial)
+    foundPorts = get_ports()        
+    connectPort = findLorenz(foundPorts)
+    print( " Lorenz COM List = ", LorenzCOM)
 
-    t2 = time.perf_counter()
-    print(f'with thread Finished in {t2-t1} seconds')
+    if connectPort != 'None':
+        createLorenzSerials(LorenzCOM)
+        #print ( '\n \n','LorenzSerial outside = ', LorenzSerial )
+        send_polling(LorenzSerial)
+        t1 = time.perf_counter()
 
-    '''
-    ser = serial.Serial(LorenzCOM[0],baudrate = 9600, timeout=1)
-    print('Connected to ' + LorenzCOM[0])
-    ser.close()
-    print('Serial Closed')
-    '''
+        with concurrent.futures.ProcessPoolExecutor() as executor:
+            executor.map(Thread_send_polling, LorenzSerial)
 
-else:
-    print('Connection Issue!')
+        t2 = time.perf_counter()
+        print(f'with Process Finished in {t2-t1} seconds')
 
-print('DONE')
+        t1 = time.perf_counter()
+
+        with concurrent.futures.ThreadPoolExecutor() as executor:
+            executor.map(Thread_send_polling, LorenzSerial)
+
+        t2 = time.perf_counter()
+        print(f'with Thread Finished in {t2-t1} seconds')
+
+        '''
+        ser = serial.Serial(LorenzCOM[0],baudrate = 9600, timeout=1)
+        print('Connected to ' + LorenzCOM[0])
+        ser.close()
+        print('Serial Closed')
+        '''
+
+    else:
+        print('Connection Issue!')
+
+    print('DONE')
