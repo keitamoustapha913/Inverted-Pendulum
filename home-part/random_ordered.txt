@@ -1,0 +1,51 @@
+$ python ./randomint.py 
+Ordered results using pool.apply_async():
+         0
+         1
+         2
+         3
+         4
+         5
+         6
+         7
+         8
+         9
+with pool.apply_async Finished in 0.00028569999999999984 seconds
+
+Ordered results using pool.imap():
+         0
+         1
+         2
+         3
+         4
+         5
+         6
+         7
+         8
+         9
+with pool.imap Finished in 2.5100000000000122e-05 seconds
+
+Unordered results using pool.imap_unordered():
+         0
+         1
+         2
+         3
+         4
+         5
+         6
+         7
+         8
+         9
+with pool.imap_unordered Finished in 1.6299999999996873e-05 seconds
+
+Ordered results using pool.map() --- will block till complete:
+         0
+         1
+         2
+         3
+         4
+         5
+         6
+         7
+         8
+         9

@@ -78,6 +78,7 @@ def send_polling(LorenzSerial):
     read_ab = [ 0x47 ]
 
     t1 = time.perf_counter()
+    # For each lorentz com send request a polling and close the serial
     for i in range(len(LorenzSerial)):
         LorenzSerial[i].open()
         # print('Lorenz',[i],' is opened')
