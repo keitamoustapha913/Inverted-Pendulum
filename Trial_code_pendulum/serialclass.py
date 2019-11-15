@@ -20,8 +20,6 @@ class polling_serial:
         self.numero = 0
         
         
-      
-    
     def caller(self,func, args):
         self.result = func(*args)
         return self.result
@@ -46,13 +44,15 @@ class polling_serial:
         t1 = time.perf_counter()
         imap_it = self.pool.imap(self.callerstar, self.TASKS)
         t2 = time.perf_counter()
-        print('class Ordered results using pool.imap():')
+        values = []
+        # print('class Ordered results using pool.imap():')
         for x in imap_it:
-            print('\t', x)
-        print(f'class with pool.imap Finished in {t2-t1} seconds')
+            # print('\t', x)
+            values.append(x)
+        # print(f'class with pool.imap Finished in {t2-t1} seconds')
         print()
-        # Total_time = b-a
-        # print(f'class with pool.imap Final Finished in {Total_time} seconds')
+        return values
+
 
     # https://stackoverflow.com/questions/25382455/python-notimplementederror-pool-objects-cannot-be-passed-between-processes
     '''

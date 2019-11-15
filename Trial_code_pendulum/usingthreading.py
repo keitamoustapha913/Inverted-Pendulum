@@ -12,6 +12,10 @@ import sys
 import threading
 from serialclass import polling_serial
 
+# to write to file in background
+from fileclass import AsyncWrite
+
+
 def get_ports():
 
     ports = serial.tools.list_ports.comports()
@@ -195,6 +199,8 @@ def test_ordered_pool():
 LorenzCOM = []
 LorenzSerials = []
 x = [1,1,1,1]
+sensor_readings = []
+message = ''
 
 if __name__ == "__main__":
 
@@ -202,6 +208,7 @@ if __name__ == "__main__":
     connectPort = findLorenz(foundPorts)
     print( " Lorenz COM List = ", LorenzCOM)
     lock = threading.Lock()
+    
 
     if connectPort != 'None':
         createLorenzSerials(LorenzCOM)
@@ -230,9 +237,17 @@ if __name__ == "__main__":
 
         myserial_poll = polling_serial(LorenzSerials)
 
-        myserial_poll.ordered_pool(core_number = 4)
+        sensor_readings = myserial_poll.ordered_pool(core_number = 4)
+        print (f'sensor_readings = {sensor_readings}')
+        if len(sensor_readings) == 4:
+            message = str(sensor_readings[0]) + ',' + str(sensor_readings[1]) + ','+ str(sensor_readings[2]) + ','+ str(sensor_readings[3])
+        else:
+            print( f'len(sensor_readings) is not equal to 4')
 
-  
+        backgroundwrite = AsyncWrite(message,'filename.txt')
+
+        backgroundwrite.start()
+        backgroundwrite.join()
 
     else:
         print('Connection Issue!')
