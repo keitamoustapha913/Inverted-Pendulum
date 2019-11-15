@@ -9,11 +9,12 @@ import concurrent.futures
 import os
 import multiprocessing
 import sys
+import threading
 
 
 # print(random.randint(1,100))
 LorenzCOM = []
-LorenzSerial = [0,1,2,3,4,5,6,7,8,9]
+LorenzSerial = [0,1,299,3,4,100,6,7,8,9]
 Sensor_values = [10,11,12,13,14,15,16,17,18,19]
 
 def process_send_rand(i,a):
@@ -47,7 +48,7 @@ def test_ordered_pool():
         #
         # Tests
         #
-        TASKS = [(process_send_rand, (i, 7)) for i in LorenzSerial]
+        TASKS = [(process_send_rand, (i,0)) for i in LorenzSerial]
         t1 = time.perf_counter()
         results = [pool.apply_async(caller, t) for t in TASKS]
         t2 = time.perf_counter()
@@ -63,6 +64,7 @@ def test_ordered_pool():
         print()
         
         print('Ordered results using pool.imap():')
+        print('imap_it = ',imap_it)
         for x in imap_it:
             print('\t', x)
         print(f'with pool.imap Finished in {t3-t2} seconds')
@@ -79,21 +81,32 @@ def test_ordered_pool():
             print('\t', x)
         print()
 
+x = [10,11,12,13,14,15,16,17,18,19]
 
+# When using threading for the same 
+def taskofThread(lock,i):
+    global x
+    dec_value = i
+    index = LorenzSerial.index(i)
+    lock.acquire()
+    x[index] = dec_value
+    lock.release()
 
+def ordered_threading():
+   t5 = time.perf_counter() 
+   for i in LorenzSerial:
+       t1 = threading.Thread(target = taskofThread, args = (lock,i))
+       t1.start()
+       t1.join()
+   t6 = time.perf_counter()
+   print(f'with threading.Lock Ordered Finished in {t6-t5} seconds')
 
 if __name__ == "__main__":
     
-    # info('Main line')
-    # print ('\t Sensor  = ',Sensor_values)
-
-    # with concurrent.futures.ProcessPoolExecutor() as executor:
-    #     # results = [executor.submit(process_send_rand, i ) for i in LorenzSerial ]
-    #     executor.submit(process_send_rand , LorenzSerial,Sensor_values )
-    
-    # print ('\t Sensor  = ',Sensor_values)
+    lock = threading.Lock()
     test_ordered_pool()
-    # for f in concurrent.futures.as_completed(results):
-    #     print(f.result())
+    ordered_threading()
+    print(f'x = {x}')
+
         
 
