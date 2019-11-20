@@ -1,0 +1,80 @@
+$ python Trial_code_pendulum/my_opc_class.py 
+ opc_client is successfully connected at opc.tcp://192.168.142.197:4840 ...
+ List of nodes connected to ... 
+
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v1))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v2))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v3))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v4))
+
+pressure_reading 1 = 500 of type <class 'int'> was given at 0.0033139999999999836 seconds
+pressure_reading 2 = 500 of type <class 'int'> was given at 0.004166500000000017 seconds
+pressure_reading 3 = 100 of type <class 'int'> was given at 0.004803100000000005 seconds
+pressure_reading 4 = 0 of type <class 'int'> was given at 0.0037116999999999845 seconds
+
+
+ The total time for 5 readings = 0.044626600000000016 seconds
+pressure_reading 1 = 500 of type <class 'int'> was given at 0.002718800000000021 seconds
+pressure_reading 2 = 500 of type <class 'int'> was given at 0.004549399999999981 seconds
+pressure_reading 3 = 100 of type <class 'int'> was given at 0.004049300000000033 seconds
+pressure_reading 4 = 0 of type <class 'int'> was given at 0.0027468999999999966 seconds
+
+
+ The total time for 5 readings = 0.0362344 seconds
+pressure_reading 1 = 500 of type <class 'int'> was given at 0.0027444000000000357 seconds
+pressure_reading 2 = 500 of type <class 'int'> was given at 0.0027702000000000004 seconds
+pressure_reading 3 = 100 of type <class 'int'> was given at 0.0023120999999999836 seconds
+pressure_reading 4 = 0 of type <class 'int'> was given at 0.0028297999999999934 seconds
+
+
+ The total time for 5 readings = 0.0330685 seconds
+pressure_reading 1 = 500 of type <class 'int'> was given at 0.003874600000000006 seconds
+pressure_reading 2 = 500 of type <class 'int'> was given at 0.0023473999999999995 seconds
+pressure_reading 3 = 100 of type <class 'int'> was given at 0.0033376000000000516 seconds
+pressure_reading 4 = 0 of type <class 'int'> was given at 0.002473100000000006 seconds
+
+
+ The total time for 5 readings = 0.033809900000000004 seconds
+pressure_reading 1 = 500 of type <class 'int'> was given at 0.0027369999999999894 seconds
+pressure_reading 2 = 500 of type <class 'int'> was given at 0.003023800000000021 seconds
+pressure_reading 3 = 100 of type <class 'int'> was given at 0.0023791999999999702 seconds
+pressure_reading 4 = 0 of type <class 'int'> was given at 0.002533899999999978 seconds
+
+
+ The total time for 5 readings = 0.03332679999999999 seconds
+pressure_reading 1 = 500 of type <class 'int'> was given at 0.0033276999999999335 seconds
+pressure_reading 2 = 500 of type <class 'int'> was given at 0.003835299999999986 seconds
+pressure_reading 3 = 100 of type <class 'int'> was given at 0.0027692999999999746 seconds
+pressure_reading 4 = 0 of type <class 'int'> was given at 0.004364199999999929 seconds
+
+
+ The total time for 5 readings = 0.03309379999999995 seconds
+pressure_reading 1 = 500 of type <class 'int'> was given at 0.0034639999999999116 seconds
+pressure_reading 2 = 500 of type <class 'int'> was given at 0.00246219999999997 seconds
+pressure_reading 3 = 100 of type <class 'int'> was given at 0.0028062999999999283 seconds
+pressure_reading 4 = 0 of type <class 'int'> was given at 0.002895299999999934 seconds
+
+
+ The total time for 5 readings = 0.035036499999999915 seconds
+pressure_reading 1 = 500 of type <class 'int'> was given at 0.00264999999999993 seconds
+pressure_reading 2 = 500 of type <class 'int'> was given at 0.002741899999999964 seconds
+pressure_reading 3 = 100 of type <class 'int'> was given at 0.0027678999999999343 seconds
+pressure_reading 4 = 0 of type <class 'int'> was given at 0.0032731000000000288 seconds
+
+
+ The total time for 5 readings = 0.03297030000000001 seconds
+pressure_reading 1 = 500 of type <class 'int'> was given at 0.0028745999999999494 seconds
+pressure_reading 2 = 500 of type <class 'int'> was given at 0.003751100000000007 seconds
+pressure_reading 3 = 100 of type <class 'int'> was given at 0.003378800000000015 seconds
+pressure_reading 4 = 0 of type <class 'int'> was given at 0.0043104000000000475 seconds
+
+
+ The total time for 5 readings = 0.03368260000000001 seconds
+pressure_reading 1 = 500 of type <class 'int'> was given at 0.0033874000000000404 seconds
+pressure_reading 2 = 500 of type <class 'int'> was given at 0.002483299999999966 seconds
+pressure_reading 3 = 100 of type <class 'int'> was given at 0.002634799999999937 seconds
+pressure_reading 4 = 0 of type <class 'int'> was given at 0.0025361999999999885 seconds
+
+
+ The total time for 5 readings = 0.035037900000000066 seconds
+ Successfully disconnected.....
