@@ -1,0 +1,307 @@
+$ python my_opc_class.py 
+ Client Connected ...
+S1 = 500 of type <class 'int'> was given at 0.0018105000000000204 seconds
+S2 = 500 of type <class 'int'> was given at 0.0017626999999999782 seconds
+S3 = 100 of type <class 'int'> was given at 0.0023702000000000167 seconds
+S4 = 0 of type <class 'int'> was given at 0.0029525999999999997 seconds   
+i = -7067 of type <class 'int'> was given at 0.0021962999999999844 seconds
+
+
+S1 = 500 of type <class 'int'> was given at 0.004513700000000176 seconds
+S2 = 500 of type <class 'int'> was given at 0.004085400000000128 seconds
+S3 = 100 of type <class 'int'> was given at 0.004013899999999904 seconds
+S4 = 0 of type <class 'int'> was given at 0.005560699999999974 seconds
+i = -7016 of type <class 'int'> was given at 0.003175299999999881 seconds
+
+
+S1 = 500 of type <class 'int'> was given at 0.004105500000000095 seconds
+S2 = 500 of type <class 'int'> was given at 0.004122199999999854 seconds
+S3 = 100 of type <class 'int'> was given at 0.004791700000000176 seconds
+S4 = 0 of type <class 'int'> was given at 0.005414800000000053 seconds  
+i = -6964 of type <class 'int'> was given at 0.0030518999999999963 seconds
+
+
+S1 = 500 of type <class 'int'> was given at 0.003164599999999851 seconds
+S2 = 500 of type <class 'int'> was given at 0.0028210999999997988 seconds
+S3 = 100 of type <class 'int'> was given at 0.0029946999999999058 seconds
+S4 = 0 of type <class 'int'> was given at 0.0031407000000003293 seconds
+i = -6914 of type <class 'int'> was given at 0.003199599999999858 seconds
+
+
+S1 = 500 of type <class 'int'> was given at 0.0040919999999999845 seconds
+S2 = 500 of type <class 'int'> was given at 0.0033244999999997304 seconds
+S3 = 100 of type <class 'int'> was given at 0.0038980999999997934 seconds
+S4 = 0 of type <class 'int'> was given at 0.0026527999999998997 seconds
+i = -6862 of type <class 'int'> was given at 0.0018137999999998655 seconds
+
+
+S1 = 500 of type <class 'int'> was given at 0.0039045999999993697 seconds
+S2 = 500 of type <class 'int'> was given at 0.0038280000000003866 seconds
+S3 = 100 of type <class 'int'> was given at 0.0037861000000001255 seconds
+S4 = 0 of type <class 'int'> was given at 0.003479099999999846 seconds
+i = -6811 of type <class 'int'> was given at 0.0037199000000001092 seconds
+
+
+S1 = 500 of type <class 'int'> was given at 0.002416099999999588 seconds
+S2 = 500 of type <class 'int'> was given at 0.0018956999999995006 seconds
+S3 = 100 of type <class 'int'> was given at 0.0018447000000003655 seconds
+S4 = 0 of type <class 'int'> was given at 0.0020841999999996474 seconds
+i = -6759 of type <class 'int'> was given at 0.0017812999999993195 seconds
+
+
+S1 = 500 of type <class 'int'> was given at 0.002505900000000061 seconds
+S2 = 500 of type <class 'int'> was given at 0.0022486999999999924 seconds
+S3 = 100 of type <class 'int'> was given at 0.0020834000000000685 seconds
+S4 = 0 of type <class 'int'> was given at 0.00414720000000024 seconds
+i = -6708 of type <class 'int'> was given at 0.0024553999999996634 seconds
+
+
+S1 = 500 of type <class 'int'> was given at 0.0022310999999994863 seconds
+S2 = 500 of type <class 'int'> was given at 0.0020601999999989573 seconds
+S3 = 100 of type <class 'int'> was given at 0.003356899999999996 seconds
+S4 = 0 of type <class 'int'> was given at 0.0040119999999994604 seconds
+i = -6656 of type <class 'int'> was given at 0.0018191999999999098 seconds
+
+
+S1 = 500 of type <class 'int'> was given at 0.0022162000000012227 seconds
+S2 = 500 of type <class 'int'> was given at 0.0019902999999992232 seconds
+S3 = 100 of type <class 'int'> was given at 0.003266500000000505 seconds
+S4 = 0 of type <class 'int'> was given at 0.0026554999999994777 seconds
+i = -6605 of type <class 'int'> was given at 0.0020772000000004454 seconds
+
+
+S1 = 500 of type <class 'int'> was given at 0.003863899999998921 seconds
+S2 = 500 of type <class 'int'> was given at 0.004116899999999646 seconds
+S3 = 100 of type <class 'int'> was given at 0.004275999999999058 seconds
+S4 = 0 of type <class 'int'> was given at 0.002970299999999426 seconds
+i = -6552 of type <class 'int'> was given at 0.004227600000000109 seconds
+
+
+S1 = 500 of type <class 'int'> was given at 0.0024945000000009543 seconds
+S2 = 500 of type <class 'int'> was given at 0.0019451999999997582 seconds
+S3 = 100 of type <class 'int'> was given at 0.003935399999999589 seconds
+S4 = 0 of type <class 'int'> was given at 0.002893499999998994 seconds
+i = -6500 of type <class 'int'> was given at 0.0017621000000005438 seconds
+
+
+S1 = 500 of type <class 'int'> was given at 0.0025354999999986916 seconds
+S2 = 500 of type <class 'int'> was given at 0.002569100000000546 seconds
+S3 = 100 of type <class 'int'> was given at 0.003244099999999861 seconds
+S4 = 0 of type <class 'int'> was given at 0.002828800000001408 seconds
+i = -6449 of type <class 'int'> was given at 0.0022017000000005282 seconds
+
+
+S1 = 500 of type <class 'int'> was given at 0.0025244999999998186 seconds
+S2 = 500 of type <class 'int'> was given at 0.002476099999999093 seconds
+S3 = 100 of type <class 'int'> was given at 0.002386500000000069 seconds
+S4 = 0 of type <class 'int'> was given at 0.004086900000000782 seconds
+i = -6397 of type <class 'int'> was given at 0.0025972000000002993 seconds
+
+
+S1 = 500 of type <class 'int'> was given at 0.002260699999999005 seconds
+S2 = 500 of type <class 'int'> was given at 0.002196899999999502 seconds
+S3 = 100 of type <class 'int'> was given at 0.004164400000000512 seconds
+S4 = 0 of type <class 'int'> was given at 0.0027328000000004238 seconds
+i = -6346 of type <class 'int'> was given at 0.003426499999999777 seconds
+
+
+S1 = 500 of type <class 'int'> was given at 0.002368300000000545 seconds
+S2 = 500 of type <class 'int'> was given at 0.0023818999999996038 seconds
+S3 = 100 of type <class 'int'> was given at 0.003295899999999463 seconds
+S4 = 0 of type <class 'int'> was given at 0.002757900000000646 seconds
+i = -6294 of type <class 'int'> was given at 0.0024082999999990307 seconds
+
+
+S1 = 500 of type <class 'int'> was given at 0.0022438999999998543 seconds
+S2 = 500 of type <class 'int'> was given at 0.0019892999999981953 seconds
+S3 = 100 of type <class 'int'> was given at 0.001890799999998194 seconds
+S4 = 0 of type <class 'int'> was given at 0.004138699999998607 seconds
+i = -6243 of type <class 'int'> was given at 0.002396600000000859 seconds
+
+
+S1 = 500 of type <class 'int'> was given at 0.0021428000000014435 seconds
+S2 = 500 of type <class 'int'> was given at 0.0022951000000013266 seconds
+S3 = 100 of type <class 'int'> was given at 0.0029753000000027896 seconds
+S4 = 0 of type <class 'int'> was given at 0.002489199999999414 seconds
+i = -6191 of type <class 'int'> was given at 0.0023441999999995744 seconds
+
+
+S1 = 500 of type <class 'int'> was given at 0.0022242999999981805 seconds
+S2 = 500 of type <class 'int'> was given at 0.0019176000000022952 seconds
+S3 = 100 of type <class 'int'> was given at 0.0038502000000022463 seconds
+S4 = 0 of type <class 'int'> was given at 0.0023268999999999096 seconds
+i = -6140 of type <class 'int'> was given at 0.0021841000000009103 seconds
+
+
+S1 = 500 of type <class 'int'> was given at 0.0023458000000005086 seconds
+S2 = 500 of type <class 'int'> was given at 0.0021783999999982484 seconds
+S3 = 100 of type <class 'int'> was given at 0.0028916000000016595 seconds
+S4 = 0 of type <class 'int'> was given at 0.002482700000001614 seconds
+i = -6088 of type <class 'int'> was given at 0.0025109000000007597 seconds
+
+
+
+Keita@LAPTOP-LG5G207P MINGW64 ~/Documents/Master AM/M2 AM/S9/Collective Inverted Pendulum/Pendulum-code/Trial_code_pendulum (master)
+$ python my_opc_class.py 
+ Client Connected ...
+S1 = 500 of type <class 'int'> was given at 0.0019327999999999845 seconds
+S2 = 500 of type <class 'int'> was given at 0.0025108000000000075 seconds
+S3 = 100 of type <class 'int'> was given at 0.0027689999999999937 seconds
+S4 = 0 of type <class 'int'> was given at 0.0023644000000000165 seconds
+i = 3748 of type <class 'int'> was given at 0.001973599999999992 seconds
+
+
+ The total time for 5 readings = 0.029552599999999984 seconds
+S1 = 500 of type <class 'int'> was given at 0.002667400000000014 seconds
+S2 = 500 of type <class 'int'> was given at 0.0024009999999999865 seconds
+S3 = 100 of type <class 'int'> was given at 0.0020872000000000113 seconds
+S4 = 0 of type <class 'int'> was given at 0.00238190000000002 seconds
+i = 3750 of type <class 'int'> was given at 0.0024350000000000205 seconds
+
+
+ The total time for 5 readings = 0.031673600000000024 seconds
+S1 = 500 of type <class 'int'> was given at 0.003012999999999988 seconds
+S2 = 500 of type <class 'int'> was given at 0.004427699999999979 seconds
+S3 = 100 of type <class 'int'> was given at 0.0028255000000000363 seconds
+S4 = 0 of type <class 'int'> was given at 0.0027628000000000097 seconds
+i = 3753 of type <class 'int'> was given at 0.0025326000000000515 seconds
+
+
+ The total time for 5 readings = 0.048343000000000025 seconds
+S1 = 500 of type <class 'int'> was given at 0.002199099999999954 seconds
+S2 = 500 of type <class 'int'> was given at 0.0038265000000000104 seconds
+S3 = 100 of type <class 'int'> was given at 0.0027649000000000146 seconds
+S4 = 0 of type <class 'int'> was given at 0.003032199999999985 seconds
+i = 3754 of type <class 'int'> was given at 0.0022887999999999797 seconds
+
+
+ The total time for 5 readings = 0.03333219999999998 seconds
+S1 = 500 of type <class 'int'> was given at 0.002693100000000004 seconds
+S2 = 500 of type <class 'int'> was given at 0.002651799999999982 seconds
+S3 = 100 of type <class 'int'> was given at 0.0032575999999999716 seconds
+S4 = 0 of type <class 'int'> was given at 0.002591900000000036 seconds
+i = 3756 of type <class 'int'> was given at 0.0027538000000000284 seconds
+
+
+ The total time for 5 readings = 0.03513270000000002 seconds
+S1 = 500 of type <class 'int'> was given at 0.0024099000000000204 seconds
+S2 = 500 of type <class 'int'> was given at 0.0032714999999999828 seconds
+S3 = 100 of type <class 'int'> was given at 0.0028013000000000066 seconds
+S4 = 0 of type <class 'int'> was given at 0.003273299999999979 seconds
+i = 3759 of type <class 'int'> was given at 0.003965900000000022 seconds
+
+
+ The total time for 5 readings = 0.04046500000000003 seconds
+S1 = 500 of type <class 'int'> was given at 0.0040383999999999975 seconds
+S2 = 500 of type <class 'int'> was given at 0.002518699999999985 seconds
+S3 = 100 of type <class 'int'> was given at 0.0020468000000000153 seconds
+S4 = 0 of type <class 'int'> was given at 0.0036128999999999745 seconds
+i = 3760 of type <class 'int'> was given at 0.002388200000000007 seconds
+
+
+ The total time for 5 readings = 0.024003899999999967 seconds
+S1 = 500 of type <class 'int'> was given at 0.003075400000000006 seconds
+S2 = 500 of type <class 'int'> was given at 0.0024392000000000302 seconds
+S3 = 100 of type <class 'int'> was given at 0.0030795000000000128 seconds
+S4 = 0 of type <class 'int'> was given at 0.002344700000000033 seconds
+i = 3762 of type <class 'int'> was given at 0.0020438999999999874 seconds
+
+
+ The total time for 5 readings = 0.034369399999999994 seconds
+S1 = 500 of type <class 'int'> was given at 0.0022944000000000297 seconds
+S2 = 500 of type <class 'int'> was given at 0.0024877999999999845 seconds
+S3 = 100 of type <class 'int'> was given at 0.002565999999999957 seconds
+S4 = 0 of type <class 'int'> was given at 0.002426700000000004 seconds
+i = 3764 of type <class 'int'> was given at 0.0024967999999999657 seconds
+
+
+ The total time for 5 readings = 0.03501700000000002 seconds
+S1 = 500 of type <class 'int'> was given at 0.00307959999999996 seconds
+S2 = 500 of type <class 'int'> was given at 0.0026476999999999196 seconds
+S3 = 100 of type <class 'int'> was given at 0.0035251000000000587 seconds
+S4 = 0 of type <class 'int'> was given at 0.0025047999999999737 seconds
+i = 3766 of type <class 'int'> was given at 0.0023895999999999917 seconds
+
+
+ The total time for 5 readings = 0.03414700000000004 seconds
+S1 = 500 of type <class 'int'> was given at 0.0023862999999999523 seconds
+S2 = 500 of type <class 'int'> was given at 0.0017440000000000788 seconds
+S3 = 100 of type <class 'int'> was given at 0.0023592000000000057 seconds
+S4 = 0 of type <class 'int'> was given at 0.002820400000000056 seconds
+i = 3768 of type <class 'int'> was given at 0.0025887999999999467 seconds
+
+
+ The total time for 5 readings = 0.022892799999999935 seconds
+S1 = 500 of type <class 'int'> was given at 0.00249710000000003 seconds
+S2 = 500 of type <class 'int'> was given at 0.0031901000000000845 seconds
+S3 = 100 of type <class 'int'> was given at 0.0024147999999999392 seconds
+S4 = 0 of type <class 'int'> was given at 0.00268120000000005 seconds
+i = 3770 of type <class 'int'> was given at 0.0023695000000000244 seconds
+
+
+ The total time for 5 readings = 0.03478990000000004 seconds
+S1 = 500 of type <class 'int'> was given at 0.0033383000000000163 seconds
+S2 = 500 of type <class 'int'> was given at 0.002325699999999986 seconds
+S3 = 100 of type <class 'int'> was given at 0.0029441999999999524 seconds
+S4 = 0 of type <class 'int'> was given at 0.0029398999999999953 seconds
+i = 3772 of type <class 'int'> was given at 0.002587000000000006 seconds
+
+
+ The total time for 5 readings = 0.03631489999999993 seconds
+S1 = 500 of type <class 'int'> was given at 0.0023849999999999705 seconds
+S2 = 500 of type <class 'int'> was given at 0.004095100000000018 seconds
+S3 = 100 of type <class 'int'> was given at 0.0024498000000000575 seconds
+S4 = 0 of type <class 'int'> was given at 0.0028801999999999994 seconds
+i = 3774 of type <class 'int'> was given at 0.0024815000000000254 seconds
+
+
+ The total time for 5 readings = 0.034883 seconds
+S1 = 500 of type <class 'int'> was given at 0.002802799999999994 seconds
+S2 = 500 of type <class 'int'> was given at 0.002523300000000006 seconds
+S3 = 100 of type <class 'int'> was given at 0.0028322000000000624 seconds
+S4 = 0 of type <class 'int'> was given at 0.0027092999999999146 seconds
+i = 3776 of type <class 'int'> was given at 0.002188599999999985 seconds
+
+
+ The total time for 5 readings = 0.03514909999999993 seconds
+S1 = 500 of type <class 'int'> was given at 0.0023292000000000312 seconds
+S2 = 500 of type <class 'int'> was given at 0.002904899999999988 seconds
+S3 = 100 of type <class 'int'> was given at 0.0023545999999999845 seconds
+S4 = 0 of type <class 'int'> was given at 0.0023214999999999764 seconds
+i = 3779 of type <class 'int'> was given at 0.0026436000000000792 seconds
+
+
+ The total time for 5 readings = 0.035928300000000024 seconds
+S1 = 500 of type <class 'int'> was given at 0.004049499999999928 seconds
+S2 = 500 of type <class 'int'> was given at 0.0024193999999999605 seconds
+S3 = 100 of type <class 'int'> was given at 0.0023967000000000294 seconds
+S4 = 0 of type <class 'int'> was given at 0.003925499999999915 seconds
+i = 3781 of type <class 'int'> was given at 0.0024559000000000664 seconds
+
+
+ The total time for 5 readings = 0.04790349999999999 seconds
+S1 = 500 of type <class 'int'> was given at 0.0034579000000000137 seconds
+S2 = 500 of type <class 'int'> was given at 0.002629199999999998 seconds
+S3 = 100 of type <class 'int'> was given at 0.001854200000000028 seconds
+S4 = 0 of type <class 'int'> was given at 0.003349400000000058 seconds
+i = 3783 of type <class 'int'> was given at 0.0023868000000000222 seconds
+
+
+ The total time for 5 readings = 0.03247749999999994 seconds
+S1 = 500 of type <class 'int'> was given at 0.0036140999999999535 seconds
+S2 = 500 of type <class 'int'> was given at 0.005150099999999935 seconds
+S3 = 100 of type <class 'int'> was given at 0.0026184000000000207 seconds
+S4 = 0 of type <class 'int'> was given at 0.006259199999999909 seconds
+i = 3785 of type <class 'int'> was given at 0.00393739999999998 seconds
+
+
+ The total time for 5 readings = 0.04916009999999993 seconds
+S1 = 500 of type <class 'int'> was given at 0.0024541000000000146 seconds
+S2 = 500 of type <class 'int'> was given at 0.0030706999999999818 seconds
+S3 = 100 of type <class 'int'> was given at 0.003967399999999954 seconds
+S4 = 0 of type <class 'int'> was given at 0.0037071000000000742 seconds
+i = 3787 of type <class 'int'> was given at 0.002778999999999976 seconds
+
+
+ The total time for 5 readings = 0.03253190000000006 seconds
+ The disconnect total time for 5 readings = 0.033464600000000067 seconds
