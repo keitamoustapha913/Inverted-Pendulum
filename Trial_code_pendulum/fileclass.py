@@ -20,8 +20,8 @@ class AsyncWrite(threading.Thread):
          f = open(self.filename, "a")
          f.write(self.text + '\n')
          f.close()
-         time.sleep(1)
-         print ("Finished Background file write to " + self.filename)
+         # time.sleep(1)
+         # print ("Finished Background file write to " + self.filename)
 
 def Main():
    message = input("Enter a string to store:" )
@@ -37,6 +37,8 @@ def Main():
    background.join()
    print ("Waited until thread was complete")
    # print (threading.enumerate())
+
+
 
 if __name__ == '__main__':
    Main()
