@@ -46,29 +46,29 @@ class Opc_Client():
 
         Return list of four pressures
         '''
-        t1 = time.perf_counter()
+        # t1 = time.perf_counter()
         pressure_reading1 = self.pressure_node_1.get_value()
-        t2 = time.perf_counter()
-        print( "pressure_reading 1 = {} of type {} was given at {} seconds".format( pressure_reading1 , type(pressure_reading1) , t2-t1 ) )
+        # t2 = time.perf_counter()
+        # print( "pressure_reading 1 = {} of type {} was given at {} seconds".format( pressure_reading1 , type(pressure_reading1) , t2-t1 ) )
 
-        t3 = time.perf_counter()
+        # t3 = time.perf_counter()
         pressure_reading2 = self.pressure_node_2.get_value()
-        t4 = time.perf_counter()
-        print( "pressure_reading 2 = {} of type {} was given at {} seconds".format( pressure_reading2 , type(pressure_reading2) , t4-t3 ) )
+        # t4 = time.perf_counter()
+        # print( "pressure_reading 2 = {} of type {} was given at {} seconds".format( pressure_reading2 , type(pressure_reading2) , t4-t3 ) )
 
-        t5 = time.perf_counter()
+        # t5 = time.perf_counter()
         pressure_reading3 = self.pressure_node_3.get_value()
-        t6 = time.perf_counter()
-        print( "pressure_reading 3 = {} of type {} was given at {} seconds".format( pressure_reading3 , type(pressure_reading3) , t6-t5 ) )
+        # t6 = time.perf_counter()
+        # print( "pressure_reading 3 = {} of type {} was given at {} seconds".format( pressure_reading3 , type(pressure_reading3) , t6-t5 ) )
 
-        t7 = time.perf_counter()
+        # t7 = time.perf_counter()
         pressure_reading4 = self.pressure_node_4.get_value()
-        t8 = time.perf_counter()
-        print( "pressure_reading 4 = {} of type {} was given at {} seconds".format( pressure_reading4 , type(pressure_reading4) , t8-t7 ) )
-        t10 = time.perf_counter()
+        # t8 = time.perf_counter()
+        # print( "pressure_reading 4 = {} of type {} was given at {} seconds".format( pressure_reading4 , type(pressure_reading4) , t8-t7 ) )
+        # t10 = time.perf_counter()
         
-        print("\n")
-        print( " The total time for 5 readings = {} seconds".format( t10-t1 ) )
+        # print("\n")
+        # print( " The total time for 4 readings = {} seconds".format( t10-t1 ) )
 
         return [ pressure_reading1 , pressure_reading2 , pressure_reading3 , pressure_reading4  ]
 

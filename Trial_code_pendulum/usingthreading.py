@@ -19,7 +19,7 @@ from opcua import Client
 from opcua import ua
 from my_opc_class import Opc_Client
 
-
+from random import randint
 
 def get_ports():
 
@@ -169,6 +169,7 @@ def test_ordered_pool():
         TASKS = [(process_send_rand, (LorenzSerial,0)) for LorenzSerial in LorenzSerials]
         t1 = time.perf_counter()
         results = [pool.apply_async(caller, t) for t in TASKS]
+        print(results)
         t2 = time.perf_counter()
         imap_it = pool.imap(callerstar, TASKS)
         t3 = time.perf_counter()
@@ -176,9 +177,12 @@ def test_ordered_pool():
         t4 = time.perf_counter()
 
         print('Ordered results using pool.apply_async():')
+        t5 = time.perf_counter()
         for r in results:
             print('\t', r.get())
-        print(f'with pool.apply_async Finished in {t2-t1} seconds')
+        t6 = time.perf_counter()
+        print(f'with pool.apply_async Finished results in {t6-t5} seconds')
+        print(f'with pool.apply_async Finished r.get in {t2-t1} seconds')
         print()
         
         print('Ordered results using pool.imap():')
@@ -195,9 +199,12 @@ def test_ordered_pool():
         print()
 
         print('Ordered results using pool.map() --- will block till complete:')
+        t7 = time.perf_counter()
         for x in pool.map(callerstar, TASKS):
             print('\t', x)
         print()
+        t8 = time.perf_counter()
+        print(f'Ordered results using pool.map() Finished in {t8-t7} seconds')
 
 
         
@@ -209,7 +216,7 @@ message_log = ''
 
 if __name__ == "__main__":
 
-    t1 = time.perf_counter()
+    
     foundPorts = get_ports()        
     connectPort = findLorenz(foundPorts)
     print( " Lorenz COM List = ", LorenzCOM)
@@ -221,40 +228,40 @@ if __name__ == "__main__":
         createLorenzSerials(LorenzCOM)
 
         myserial_poll = polling_serial(LorenzSerials)
+        t1 = time.perf_counter()
+        for i in range(0, 2000 , 3):
+            # t2 = time.perf_counter()
+            sensor_readings = myserial_poll.ordered_pool(core_number = 4)
+            # t7 = time.perf_counter()
+            my_pressures_readings = my_client.collecting_pressures()
+            # t3 = time.perf_counter()
 
+            message = []
+            for reading in sensor_readings:
+                message.append(reading)
+
+            for reading in my_pressures_readings:
+                message.append(reading)
+            
+            t4 = time.perf_counter()
+            backgroundwrite = AsyncWrite(message,'filename_b_2_0.csv')
+
+            backgroundwrite.start()
+            backgroundwrite.join()
+            # t5 = time.perf_counter()
+            new_pressures = [ 0 , i, 0, 0]
+            my_client.send_pressures(new_pressures)
         t2 = time.perf_counter()
-        sensor_readings = myserial_poll.ordered_pool(core_number = 4)
-        t7 = time.perf_counter()
-        my_pressures_readings = my_client.collecting_pressures()
-        t3 = time.perf_counter()
-
-        for reading in sensor_readings:
-            message_log += str(reading) + ','
-
-        for reading in my_pressures_readings:
-            if my_pressures_readings.index(reading) < ( len(my_pressures_readings) -1 ):
-                message_log += str(reading) + ','
-            else:
-                message_log += str(reading)
-        
-        t4 = time.perf_counter()
-        backgroundwrite = AsyncWrite(message_log,'filename.txt')
-
-        backgroundwrite.start()
-        backgroundwrite.join()
-        t5 = time.perf_counter()
-        new_pressures = [ 7, 415, 893, 54]
-        my_client.send_pressures(new_pressures)
-
         my_client.close()
-        t6 = time.perf_counter()
-        print(f'Initialisation of serial Ports Finished in {t2-t1} seconds')
-        print(f'Collection of both sensor and pressures Finished in {t3-t2} seconds')
-        print(f'Collection of only sensor Finished in {t7-t2} seconds')
-        print(f'Collection of only pressures Finished in {t3-t7} seconds')
-        print(f'Creating message string Finished in {t4-t3} seconds')
-        print(f'logging the message string Finished in {t5-t4} seconds')
-        print(f'The whole Main Program Finished in {t6-t1} seconds')
+        # t6 = time.perf_counter()
+        # print(f'Initialisation of serial Ports Finished in {t2-t1} seconds')
+        # print(f'Collection of both sensor and pressures Finished in {t3-t2} seconds')
+        # print(f'Collection of only sensor Finished in {t7-t2} seconds')
+        # print(f'Collection of only pressures Finished in {t3-t7} seconds')
+        # print(f'Creating message string Finished in {t4-t3} seconds')
+        # print(f'logging the message string Finished in {t5-t4} seconds')
+        # print(f'The whole Main Program Finished in {t6-t1} seconds')
+        print(f'The whole b_2 loop 0-2000 by 3 Finished in {t2-t1} seconds')
         
     else:
         print('Connection Issue!')

@@ -1,0 +1,132 @@
+"21 nov 2019 18:40"
+
+Keita@LAPTOP-LG5G207P MINGW64 ~/Documents/Master AM/M2 AM/S9/Collective Inverted Pendulum/Pendulum-code (master)
+$ python Trial_code_pendulum/usingthreading.py
+                                     Lorenz COM List =  ['COM3', 'COM6', 'COM5', 'COM4']
+ opc_client is successfully connected at opc.tcp://192.168.142.197:4840 ...
+ List of nodes connected to ...
+
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v1))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v2))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v3))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v4))
+
+ OPC Client is Successfully disconnected.....
+DONE
+
+Keita@LAPTOP-LG5G207P MINGW64 ~/Documents/Master AM/M2 AM/S9/Collective Inverted Pendulum/Pendulum-code (master)
+$ python Trial_code_pendulum/usingthreading.py 
+ Lorenz COM List =  ['COM3', 'COM6', 'COM5', 'COM4']
+ opc_client is successfully connected at opc.tcp://192.168.142.197:4840 ...
+ List of nodes connected to ...
+
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v1))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v2))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v3))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v4))
+
+ OPC Client is Successfully disconnected.....
+DONE
+
+Keita@LAPTOP-LG5G207P MINGW64 ~/Documents/Master AM/M2 AM/S9/Collective Inverted Pendulum/Pendulum-code (master)
+$ python Trial_code_pendulum/usingthreading.py 
+ Lorenz COM List =  ['COM3', 'COM6', 'COM5', 'COM4']
+ opc_client is successfully connected at opc.tcp://192.168.142.197:4840 ...
+ List of nodes connected to ... 
+
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v1))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v2))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v3))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v4))
+
+ OPC Client is Successfully disconnected.....
+DONE
+
+Keita@LAPTOP-LG5G207P MINGW64 ~/Documents/Master AM/M2 AM/S9/Collective Inverted Pendulum/Pendulum-code (master)
+$ python Trial_code_pendulum/usingthreading.py 
+ Lorenz COM List =  ['COM3', 'COM6', 'COM5', 'COM4']
+ opc_client is successfully connected at opc.tcp://192.168.142.197:4840 ...
+ List of nodes connected to ... 
+
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v1))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v2))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v3))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v4))
+
+ OPC Client is Successfully disconnected.....
+DONE
+
+Keita@LAPTOP-LG5G207P MINGW64 ~/Documents/Master AM/M2 AM/S9/Collective Inverted Pendulum/Pendulum-code (master)
+$ python Trial_code_pendulum/usingthreading.py 
+ Lorenz COM List =  ['COM3', 'COM6', 'COM5', 'COM4']
+ opc_client is successfully connected at opc.tcp://192.168.142.197:4840 ...
+ List of nodes connected to ...
+
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v1))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v2))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v3))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v4))
+
+ OPC Client is Successfully disconnected.....
+The whole loop 0-2000 by 3 Finished in 85.5087699 seconds
+DONE
+
+Keita@LAPTOP-LG5G207P MINGW64 ~/Documents/Master AM/M2 AM/S9/Collective Inverted Pendulum/Pendulum-code (master)
+$ python Trial_code_pendulum/usingthreading.py 
+ Lorenz COM List =  ['COM3', 'COM6', 'COM5', 'COM4']
+ opc_client is successfully connected at opc.tcp://192.168.142.197:4840 ...
+ List of nodes connected to ... 
+
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v1))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v2))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v3))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v4))
+
+ OPC Client is Successfully disconnected.....
+The whole loop 0-2000 by 3 Finished in 85.82571709999999 seconds
+DONE
+
+Keita@LAPTOP-LG5G207P MINGW64 ~/Documents/Master AM/M2 AM/S9/Collective Inverted Pendulum/Pendulum-code (master)
+$ python Trial_code_pendulum/usingthreading.py 
+ Lorenz COM List =  ['COM3', 'COM6', 'COM5', 'COM4']
+ opc_client is successfully connected at opc.tcp://192.168.142.197:4840 ...
+ List of nodes connected to ... 
+
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v1))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v2))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v3))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v4))
+
+ OPC Client is Successfully disconnected.....
+The whole loop 0-2000 by 10 Finished in 25.997652300000002 seconds
+DONE
+
+Keita@LAPTOP-LG5G207P MINGW64 ~/Documents/Master AM/M2 AM/S9/Collective Inverted Pendulum/Pendulum-code (master)
+$ python Trial_code_pendulum/usingthreading.py 
+ Lorenz COM List =  ['COM3', 'COM6', 'COM5', 'COM4']
+ opc_client is successfully connected at opc.tcp://192.168.142.197:4840 ...
+ List of nodes connected to ...
+
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v1))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v2))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v3))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v4))
+
+ OPC Client is Successfully disconnected.....
+The whole loop 0-2000 by 3 Finished in 86.09284559999999 seconds
+DONE
+
+
+$ python -u "c:\Users\Keita\Documents\Master AM\M2 AM\S9\Collective Inverted Pendulum\Pendulum-code\Trial_code_pendulum\usingthreading.py"
+ Lorenz COM List =  ['COM3', 'COM6', 'COM5', 'COM4']
+ opc_client is successfully connected at opc.tcp://192.168.142.197:4840 ...
+ List of nodes connected to ...
+
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v1))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v2))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v3))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v4))
+
+ OPC Client is Successfully disconnected.....
+The whole b_2 loop 0-2000 by 3 Finished in 86.50797779999999 seconds
+DONE
