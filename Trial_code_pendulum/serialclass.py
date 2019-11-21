@@ -28,30 +28,36 @@ class polling_serial:
         return self.caller(*args)
 
     def process_send_rand(self,LorenzSerial,a):
+        # t1 = time.perf_counter()
         LorenzSerial.open()
         LorenzSerial.write(self.poll_start)
         LorenzSerial.read(2)
         LorenzSerial.write(self.read_a)
         line = LorenzSerial.read(2)
+        LorenzSerial.write(self.poll_stop)
         self.numero = int.from_bytes(line,  byteorder = 'big' )
         LorenzSerial.close()
+        # t2 = time.perf_counter()
+        # print(f'process_send_rand(self,LorenzSerial,a) Finished in {t2-t1} seconds \n')
         return self.numero
 
     # Testing the way to order a pool process
     def ordered_pool(self,core_number = 4):
         
         self.TASKS = [(self.process_send_rand, (LorenzSerial,0)) for LorenzSerial in self.LorenzSerials]
-        t1 = time.perf_counter()
+        # t1 = time.perf_counter()
         imap_it = self.pool.imap(self.callerstar, self.TASKS)
-        t2 = time.perf_counter()
+        # t2 = time.perf_counter()
         values = []
         # print('class Ordered results using pool.imap():')
         for x in imap_it:
             # print('\t', x)
             values.append(x)
         # print(f'class with pool.imap Finished in {t2-t1} seconds')
-        print()
+        # print()
+        # return imap_it
         return values
+        
 
 
     # https://stackoverflow.com/questions/25382455/python-notimplementederror-pool-objects-cannot-be-passed-between-processes
@@ -71,43 +77,43 @@ class polling_serial:
     # Testing the way to order a pool process
     def ordered_pools(self,core_number = 4):
         with multiprocessing.Pool(core_number) as pool:
-            t0 = time.perf_counter()
+            # t0 = time.perf_counter()
             self.TASKS = [(self.process_send_rand, (LorenzSerial,0)) for LorenzSerial in self.LorenzSerials]
             t1 = time.perf_counter()
-            # self.results = [pool.apply_async(self.caller, t) for t in self.TASKS]
+            self.results = [pool.apply_async(self.caller, t) for t in self.TASKS]
             t2 = time.perf_counter()
-            imap_it = pool.imap(self.callerstar, self.TASKS)
-            t3 = time.perf_counter()
-            imap_unordered_it = pool.imap_unordered(self.callerstar, self.TASKS)
-            t4 = time.perf_counter()
+            # imap_it = pool.imap(self.callerstar, self.TASKS)
+            # t3 = time.perf_counter()
+            # imap_unordered_it = pool.imap_unordered(self.callerstar, self.TASKS)
+            # t4 = time.perf_counter()
 
-            # print('class Ordered results using pool.apply_async():')
-            # for r in self.results:
-            #     print('\t', r.get())
-            # print(f'class with pool.apply_async Finished in {t2-t1} seconds')
-            # print()
+            print('class Ordered results using pool.apply_async():')
+            for r in self.results:
+                print('\t', r.get())
+            print(f'class with pool.apply_async Finished in {t2-t1} seconds')
+            print()
             
-            print('class Ordered results using pool.imap():')
-            print('imap_it = ',imap_it)
-            for x in imap_it:
-                print('\t', x)
-            print(f'class with pool.imap Finished in {t3-t2} seconds')
-            print()
+            # print('class Ordered results using pool.imap():')
+            # print('imap_it = ',imap_it)
+            # for x in imap_it:
+            #     print('\t', x)
+            # print(f'class with pool.imap Finished in {t3-t2} seconds')
+            # print()
 
-            print('class Unordered results using pool.imap_unordered():')
-            for x in imap_unordered_it:
-                print('\t', x)
-            print(f'class with pool.imap_unordered Finished in {t4-t3} seconds')
-            print()
+            # print('class Unordered results using pool.imap_unordered():')
+            # for x in imap_unordered_it:
+            #     print('\t', x)
+            # print(f'class with pool.imap_unordered Finished in {t4-t3} seconds')
+            # print()
 
-            print('class Ordered results using pool.map() --- will block till complete:')
-            for x in pool.map(self.callerstar, self.TASKS):
-                print('\t', x)
-            print()
+            # print('class Ordered results using pool.map() --- will block till complete:')
+            # for x in pool.map(self.callerstar, self.TASKS):
+            #     print('\t', x)
+            # print()
 
-            a = t1-t0
-            b = t3 - t2
-            Total_time = b-a
-            print(f'class with pool.imap Final Finished in {Total_time} seconds')
+            # a = t1-t0
+            # b = t3 - t2
+            # Total_time = b-a
+            # print(f'class with pool.imap Final Finished in {Total_time} seconds')
 
         

@@ -2,6 +2,7 @@
 06 Nov 2019 by Keita Mouhamed Moustapha
 '''
 import serial.tools.list_ports
+import time
 
 def get_ports():
 
@@ -55,6 +56,7 @@ def send_polling(LorenzSerial):
     read_ab = [ 0x47 ]
 
     for i in range(len(LorenzSerial)):
+        t1 = time.perf_counter()
         LorenzSerial[i].open()
         print('Lorenz',[i],' is opened')
         LorenzSerial[i].write(poll_start)
@@ -64,6 +66,8 @@ def send_polling(LorenzSerial):
         numero = int.from_bytes(line,  byteorder = 'big' )
         LorenzSerial[i].close()
         print ('\t numero',[i],' = ',numero)
+        t2 = time.perf_counter()
+        print(f'Without Threading for {i} iteration Finished in {t2-t1} seconds \n')
    
         
 LorenzCOM = []

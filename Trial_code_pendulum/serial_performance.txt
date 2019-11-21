@@ -1,0 +1,111 @@
+21 Nov 2019
+=================================as a class =====================================
+$ python Trial_code_pendulum/usingthreading.py 
+ Lorenz COM List =  ['COM3', 'COM6', 'COM5', 'COM4']
+ opc_client is successfully connected at opc.tcp://192.168.142.197:4840 ...
+ List of nodes connected to ...
+
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v1))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v2))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v3))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v4))
+
+class Ordered results using pool.apply_async():
+class with pool.apply_async Finished in 2.0000000000575113e-07 seconds
+
+class Ordered results using pool.imap():
+imap_it =  <multiprocessing.pool.IMapIterator object at 0x000001627008C948>
+         28
+         16
+         0
+         0
+class with pool.imap Finished in 3.429999999998712e-05 seconds
+
+class Unordered results using pool.imap_unordered():
+         36
+         0
+         8
+         0
+class with pool.imap_unordered Finished in 1.4299999999967117e-05 seconds
+
+class Ordered results using pool.map() --- will block till complete:
+         26
+         11
+         0
+         0
+
+class with pool.imap Final Finished in 2.759999999996099e-05 seconds
+pressure_reading 1 = 7 of type <class 'int'> was given at 0.003360599999999936 seconds
+pressure_reading 2 = 415 of type <class 'int'> was given at 0.0026137999999999995 seconds
+pressure_reading 3 = 893 of type <class 'int'> was given at 0.0018063000000001495 seconds
+pressure_reading 4 = 54 of type <class 'int'> was given at 0.001796600000000037 seconds
+
+
+ The total time for 4 readings = 0.011513299999999838 seconds
+ OPC Client is Successfully disconnected.....
+Initialisation of serial Ports Finished in 0.057801800000000014 seconds
+Collection of both sensor and pressures Finished in 0.8435828000000001 seconds
+Collection of only sensor Finished in 0.8313170000000001 seconds
+Collection of only pressures Finished in 0.012265799999999993 seconds
+Creating message string Finished in 1.1199999999877974e-05 seconds
+logging the message string Finished in 0.0019987999999999673 seconds
+The whole Main Program Finished in 0.9155213 seconds
+DONE
+
+
+=============================as a function========================================
+Keita@LAPTOP-LG5G207P MINGW64 ~/Documents/Master AM/M2 AM/S9/Collective Inverted Pendulum/Pendulum-code (master)
+$ python Trial_code_pendulum/usingthreading.py 
+ Lorenz COM List =  ['COM3', 'COM6', 'COM5', 'COM4']
+ opc_client is successfully connected at opc.tcp://192.168.142.197:4840 ...
+ List of nodes connected to ...
+
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v1))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v2))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v3))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v4))
+
+Ordered results using pool.apply_async():
+         26
+         13
+         0
+         0
+with pool.apply_async Finished in 5.6200000000006245e-05 seconds
+
+Ordered results using pool.imap():
+imap_it =  <multiprocessing.pool.IMapIterator object at 0x0000020CBB423188>
+         20
+         14
+         0
+         0
+with pool.imap Finished in 1.580000000001025e-05 seconds
+
+Unordered results using pool.imap_unordered():
+         34
+         7
+         0
+         0
+with pool.imap_unordered Finished in 1.1499999999997623e-05 seconds
+
+Ordered results using pool.map() --- will block till complete:
+         37
+         17
+         0
+         0
+
+pressure_reading 1 = 7 of type <class 'int'> was given at 0.0025877000000000816 seconds
+pressure_reading 2 = 415 of type <class 'int'> was given at 0.0019457000000000502 seconds
+pressure_reading 3 = 893 of type <class 'int'> was given at 0.003835099999999869 seconds
+pressure_reading 4 = 54 of type <class 'int'> was given at 0.0022807000000000244 seconds
+
+
+ The total time for 4 readings = 0.023446199999999973 seconds
+ OPC Client is Successfully disconnected.....
+Initialisation of serial Ports Finished in 0.061946500000000015 seconds
+Collection of both sensor and pressures Finished in 0.9506391000000001 seconds
+Collection of only sensor Finished in 0.9264337 seconds
+Collection of only pressures Finished in 0.024205400000000044 seconds
+Creating message string Finished in 7.299999999821338e-06 seconds
+logging the message string Finished in 0.0007012000000001795 seconds
+The whole Main Program Finished in 1.0281031999999999 seconds
+DONE

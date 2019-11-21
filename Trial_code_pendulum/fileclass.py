@@ -6,7 +6,7 @@ https://www.tutorialspoint.com/writing-files-in-background-in-python
 
 import threading
 import time
-
+import csv
 
 class AsyncWrite(threading.Thread):
       '''
@@ -17,11 +17,10 @@ class AsyncWrite(threading.Thread):
          self.text = text
          self.filename = filename
       def run(self):
-         f = open(self.filename, "a")
-         f.write(self.text + '\n')
-         f.close()
-         # time.sleep(1)
-         # print ("Finished Background file write to " + self.filename)
+         with open(self.filename, 'a') as csv_file:
+            csv_writer = csv.writer(csv_file, delimiter=',')
+            csv_writer.writerow(self.text)
+
 
 def Main():
    message = input("Enter a string to store:" )

@@ -11,3 +11,25 @@ Lorenz [2]  is opened
 Lorenz [3]  is opened
 	 numero [3]  =  14
 DONE
+
+
+" 21 Nov 2019 "
+$ python Trial_code_pendulum/findlorentz.py 
+ Lorenz COM List =  ['COM3', 'COM6', 'COM5', 'COM4']
+Lorenz [0]  is opened
+         numero [0]  =  34
+Without Threading for 0 iteration Finished in 0.10490300000000001 seconds 
+
+Lorenz [1]  is opened
+         numero [1]  =  12
+Without Threading for 1 iteration Finished in 0.1101567 seconds 
+
+Lorenz [2]  is opened
+         numero [2]  =  0
+Without Threading for 2 iteration Finished in 0.10935139999999999 seconds 
+
+Lorenz [3]  is opened
+         numero [3]  =  0
+Without Threading for 3 iteration Finished in 0.10924830000000002 seconds 
+
+DONE
