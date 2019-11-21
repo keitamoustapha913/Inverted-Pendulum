@@ -1,0 +1,28 @@
+"21 Nov 2019"
+$ python Trial_code_pendulum/usingthreading.py 
+ Lorenz COM List =  ['COM3', 'COM6', 'COM5', 'COM4']
+ opc_client is successfully connected at opc.tcp://192.168.142.197:4840 ...
+ List of nodes connected to ...
+
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v1))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v2))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v3))
+Node(StringNodeId(ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v4))
+
+
+pressure_reading 1 = 7 of type <class 'int'> was given at 0.0030046999999999713 seconds
+pressure_reading 2 = 415 of type <class 'int'> was given at 0.0031397000000000785 seconds
+pressure_reading 3 = 893 of type <class 'int'> was given at 0.002192299999999925 seconds
+pressure_reading 4 = 54 of type <class 'int'> was given at 0.003239800000000015 seconds
+
+
+ The total time for 5 readings = 0.02396200000000004 seconds
+ OPC Client is Successfully disconnected.....
+Initialisation of serial Ports Finished in 0.05833659999999999 seconds
+Collection of both sensor and pressures Finished in 0.4152799 seconds
+Collection of only sensor Finished in 0.39000510000000005 seconds
+Collection of only pressures Finished in 0.02527479999999993 seconds
+Creating message string Finished in 7.279999999998399e-05 seconds
+logging the message string Finished in 0.002882000000000051 seconds
+The whole Main Program Finished in 0.4899979 seconds
+DONE

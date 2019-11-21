@@ -14,6 +14,11 @@ from serialclass import polling_serial
 
 # to write to file in background
 from fileclass import AsyncWrite
+# to handle the opc connection
+from opcua import Client
+from opcua import ua
+from my_opc_class import Opc_Client
+
 
 
 def get_ports():
@@ -200,55 +205,57 @@ LorenzCOM = []
 LorenzSerials = []
 x = [1,1,1,1]
 sensor_readings = []
-message = ''
+message_log = ''
 
 if __name__ == "__main__":
 
+    t1 = time.perf_counter()
     foundPorts = get_ports()        
     connectPort = findLorenz(foundPorts)
     print( " Lorenz COM List = ", LorenzCOM)
     lock = threading.Lock()
+    my_client = Opc_Client()
     
 
     if connectPort != 'None':
         createLorenzSerials(LorenzCOM)
-        #print ( '\n \n','LorenzSerials outside = ', LorenzSerials )
-        # send_polling(LorenzSerials)
-        # t1 = time.perf_counter()
-
-        # with concurrent.futures.ProcessPoolExecutor() as executor:
-        #     executor.map(Thread_send_polling, LorenzSerials)
-
-        # t2 = time.perf_counter()
-        # print(f'with Process Finished in {t2-t1} seconds')
-
-        # t1 = time.perf_counter()
-
-        # with concurrent.futures.ThreadPoolExecutor() as executor:
-        #     executor.map(Thread_send_polling, LorenzSerials)
-
-        # t2 = time.perf_counter()
-        # print(f'with Thread Finished in {t2-t1} seconds')
-
-        # ordered_threading()
-        # print(f'x = {x}')
-
-        # test_ordered_pool()
 
         myserial_poll = polling_serial(LorenzSerials)
 
+        t2 = time.perf_counter()
         sensor_readings = myserial_poll.ordered_pool(core_number = 4)
-        print (f'sensor_readings = {sensor_readings}')
-        if len(sensor_readings) == 4:
-            message = str(sensor_readings[0]) + ',' + str(sensor_readings[1]) + ','+ str(sensor_readings[2]) + ','+ str(sensor_readings[3])
-        else:
-            print( f'len(sensor_readings) is not equal to 4')
+        t7 = time.perf_counter()
+        my_pressures_readings = my_client.collecting_pressures()
+        t3 = time.perf_counter()
 
-        backgroundwrite = AsyncWrite(message,'filename.txt')
+        for reading in sensor_readings:
+            message_log += str(reading) + ','
+
+        for reading in my_pressures_readings:
+            if my_pressures_readings.index(reading) < ( len(my_pressures_readings) -1 ):
+                message_log += str(reading) + ','
+            else:
+                message_log += str(reading)
+        
+        t4 = time.perf_counter()
+        backgroundwrite = AsyncWrite(message_log,'filename.txt')
 
         backgroundwrite.start()
         backgroundwrite.join()
+        t5 = time.perf_counter()
+        new_pressures = [ 7, 415, 893, 54]
+        my_client.send_pressures(new_pressures)
 
+        my_client.close()
+        t6 = time.perf_counter()
+        print(f'Initialisation of serial Ports Finished in {t2-t1} seconds')
+        print(f'Collection of both sensor and pressures Finished in {t3-t2} seconds')
+        print(f'Collection of only sensor Finished in {t7-t2} seconds')
+        print(f'Collection of only pressures Finished in {t3-t7} seconds')
+        print(f'Creating message string Finished in {t4-t3} seconds')
+        print(f'logging the message string Finished in {t5-t4} seconds')
+        print(f'The whole Main Program Finished in {t6-t1} seconds')
+        
     else:
         print('Connection Issue!')
 

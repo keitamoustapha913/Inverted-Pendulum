@@ -1,4 +1,5 @@
 from opcua import Client
+from opcua import ua
 import time
 
 '''
@@ -72,13 +73,21 @@ class Opc_Client():
         return [ pressure_reading1 , pressure_reading2 , pressure_reading3 , pressure_reading4  ]
 
     def send_pressures(self, pressure_values = [0 , 0 , 0 , 0 ] ):
+        '''
+        https://github.com/FreeOpcUa/python-opcua/blob/master/examples/client-minimal.py
+        To set value you need to know the dataValue and type to send in the values of same variant type and datavalue
+
+        '''
         if len(pressure_values) == 4:
             for node, pressure_value in zip(self.pressure_node_list, pressure_values):
-                node.set_value(pressure_value)
+                # node.set_value(pressure_value)
+                # since we send Int16 Variant type and can be checked using the print below
+                # print( node.get_data_value() )
+                node.set_value(ua.Variant(pressure_value, ua.VariantType.Int16))
 
     def close(self):
         self.opc_client.disconnect()
-        print( " Successfully disconnected....." )
+        print( " OPC Client is Successfully disconnected....." )
 
 
 if __name__ == "__main__":
