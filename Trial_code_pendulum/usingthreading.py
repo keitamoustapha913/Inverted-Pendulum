@@ -229,7 +229,7 @@ if __name__ == "__main__":
 
         myserial_poll = polling_serial(LorenzSerials)
         t1 = time.perf_counter()
-        for i in range(0, 2000 , 10):
+        for i in range(0, 2000 , 3):
             # t2 = time.perf_counter()
             sensor_readings = myserial_poll.ordered_pool(core_number = 4)
             # t7 = time.perf_counter()
@@ -244,7 +244,7 @@ if __name__ == "__main__":
                 message.append(reading)
             
             t4 = time.perf_counter()
-            filename = 'filename_a_2_1.csv'
+            filename = 'filename_a_2_0.csv'
             backgroundwrite = AsyncWrite(message,filename)
 
             backgroundwrite.start()
@@ -262,7 +262,7 @@ if __name__ == "__main__":
         # print(f'Creating message string Finished in {t4-t3} seconds')
         # print(f'logging the message string Finished in {t5-t4} seconds')
         # print(f'The whole Main Program Finished in {t6-t1} seconds')
-        print(f'The whole filename of { filename} loop 0-2000 by 10 Finished in {t2-t1} seconds')
+        print(f'The whole filename of { filename} loop 0-2000 by 3 Finished in {t2-t1} seconds')
         
     else:
         print('Connection Issue!')
