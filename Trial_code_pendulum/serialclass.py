@@ -35,7 +35,7 @@ class polling_serial:
         LorenzSerial.write(self.read_a)
         line = LorenzSerial.read(2)
         LorenzSerial.write(self.poll_stop)
-        self.numero = int.from_bytes(line,  byteorder = 'big' )
+        self.numero = int.from_bytes(line,  byteorder = 'big' ,signed= True)
         LorenzSerial.close()
         # t2 = time.perf_counter()
         # print(f'process_send_rand(self,LorenzSerial,a) Finished in {t2-t1} seconds \n')
