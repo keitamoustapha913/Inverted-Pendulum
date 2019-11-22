@@ -229,7 +229,7 @@ if __name__ == "__main__":
 
         myserial_poll = polling_serial(LorenzSerials)
         t1 = time.perf_counter()
-        for i in range(0, 2000 , 3):
+        for i in range(0, 4000 , 3):
             # t2 = time.perf_counter()
             sensor_readings = myserial_poll.ordered_pool(core_number = 4)
             # t7 = time.perf_counter()
@@ -244,7 +244,7 @@ if __name__ == "__main__":
                 message.append(reading)
             
             t4 = time.perf_counter()
-            backgroundwrite = AsyncWrite(message,'filename_b_2_0.csv')
+            backgroundwrite = AsyncWrite(message,'fileappend.csv')
 
             backgroundwrite.start()
             backgroundwrite.join()
