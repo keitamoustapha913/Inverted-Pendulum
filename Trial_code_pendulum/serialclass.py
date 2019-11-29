@@ -1,3 +1,12 @@
+"""
+Class to Handle all Serial communication between Lorenz Sensors and the PC
+
+# https://stackoverflow.com/questions/25382455/python-notimplementederror-pool-objects-cannot-be-passed-between-processes
+__getstate__ is always called prior to pickling an object, and allow you to specify exactly which pieces of the object's state should actually be pickled. 
+Then upon unpickling, __setstate__(state) will be called if its implemented (it is in our case), or if it's not, the dict returned by __getstate__ will be used as the __dict__ for the unpickled instance. 
+In the above example, we're explicitly setting __dict__ to the dict we returned in __getstate__, but we could have just not implemented __setstate__ and gotten the same effect.
+
+"""
 import multiprocessing
 import time
 import serial.tools.list_ports
@@ -7,8 +16,15 @@ from multiprocessing import Pool
 
 
 class polling_serial:
-
+    """
+    Polling class for SOPM of data from the sensors by multiprocessing module approach
+    """
     def __init__(self, LorenzSerials):
+        """
+        Polling class instance initialization
+        :param Serial Objects: (List of object) LorenzSerials
+
+        """
         self.pool = Pool(4)
         self.LorenzSerials = LorenzSerials
         self.poll_start = [ 0x02, 0x5A, 0x01, 0xFF, 0x01, 0x01, 0x5C, 0xC7 ]
@@ -21,13 +37,41 @@ class polling_serial:
         
         
     def caller(self,func, args):
+        """
+        Second caller funtion for TASKS list
+        Calls the function passed to the TASKS list
+
+        :param function_name: (function) function to be called
+        :param args: (tuple) parameters
+        :return: result
+
+        """
         self.result = func(*args)
         return self.result
 
     def callerstar(self,args):
+        """
+        First caller function for TASKS list
+        Accepts a tuple of two args parameters
+
+        :param args: (object) LorenzSerial object
+        :param args: (int) a = 0 by default
+
+        :return: (function) caller function 
+
+        """
         return self.caller(*args)
 
-    def process_send_rand(self,LorenzSerial,a):
+    def process_send_rand(self,LorenzSerial,a = 0):
+        """
+        Gets sensor values from the Lorenz sensor
+
+        :param args: (object) LorenzSerial object
+        :param args: (int) a = 0 by default
+
+        :return: (int) sensor value 
+
+        """
         # t1 = time.perf_counter()
         LorenzSerial.open()
         LorenzSerial.write(self.poll_start)
@@ -43,6 +87,13 @@ class polling_serial:
 
     # Testing the way to order a pool process
     def ordered_pool(self,core_number = 4):
+        """
+        Start polling values from the sensors in parallel
+
+        :param core_number: (int) number of cores to use for parallel processing by default = 4
+        :return: (list of int) four sensor values
+
+        """
         
         self.TASKS = [(self.process_send_rand, (LorenzSerial,0)) for LorenzSerial in self.LorenzSerials]
         # t1 = time.perf_counter()
@@ -59,23 +110,32 @@ class polling_serial:
         return values
         
 
-
-    # https://stackoverflow.com/questions/25382455/python-notimplementederror-pool-objects-cannot-be-passed-between-processes
-    '''
-    __getstate__ is always called prior to pickling an object, and allow you to specify exactly which pieces of the object's state should actually be pickled. 
-    Then upon unpickling, __setstate__(state) will be called if its implemented (it is in our case), or if it's not, the dict returned by __getstate__ will be used as the __dict__ for the unpickled instance. 
-    In the above example, we're explicitly setting __dict__ to the dict we returned in __getstate__, but we could have just not implemented __setstate__ and gotten the same effect.
-    '''
     def __getstate__(self):
+        """
+        __getstate__ is always called prior to pickling an object, and allow you to specify exactly which pieces of the object's state should actually be pickled. 
+
+        """
         self_dict = self.__dict__.copy()
         del self_dict['pool']
         return self_dict
 
     def __setstate__(self, state):
+        """
+        Then upon unpickling, __setstate__(state) will be called if its implemented (it is in our case), or if it's not, the dict returned by __getstate__ will be used as the __dict__ for the unpickled instance. 
+        In the above example, we're explicitly setting __dict__ to the dict we returned in __getstate__, but we could have just not implemented __setstate__ and gotten the same effect.
+
+        """
         self.__dict__.update(state)
 
     # Testing the way to order a pool process
     def ordered_pools(self,core_number = 4):
+        """
+        Start polling values from the sensors in parallel but with multiple methods
+
+        :param core_number: (int) number of cores to use for parallel processing by default = 4
+        :return: (list of int) four sensor values
+
+        """
         with multiprocessing.Pool(core_number) as pool:
             # t0 = time.perf_counter()
             self.TASKS = [(self.process_send_rand, (LorenzSerial,0)) for LorenzSerial in self.LorenzSerials]

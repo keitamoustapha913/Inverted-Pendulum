@@ -1,7 +1,8 @@
 '''
-12 Nov 2019 by Keita Mouhamed Moustapha
+The trial of the pendulum code
+Started 12 Nov 2019 by Keita Mouhamed Moustapha
 
-using threading and time modules
+
 '''
 import serial.tools.list_ports
 import time
@@ -22,6 +23,12 @@ from my_opc_class import Opc_Client
 from random import randint
 
 def get_ports():
+    """
+    Get all available ports
+
+    :return: (list of objects) detected serial ports 
+
+    """
 
     ports = serial.tools.list_ports.comports()
     
@@ -29,6 +36,13 @@ def get_ports():
 
 
 def findLorenz(portsFound):
+    """
+    Find the Lorenz sensors' COM from the available serial ports
+
+    :param portsFound: (list of objects) detected serial ports
+    :return: (list of COMs) found lorenz COMs 
+
+    """
     
     commPort = 'None'
     numConnection = len(portsFound)
@@ -51,7 +65,11 @@ def findLorenz(portsFound):
 
 # To create list of 4 Lorenz Serial objects
 def createLorenzSerials(LorenzCOM):
-    #print('Num of Lorenz = ',len(LorenzCOM) )
+    """
+    Create a list of lorenz serial handles from the found COMs
+    :param LorenzCOM: (List of COMs) found lorenz COMs 
+
+    """
     
     if len(LorenzCOM) == 4:
         #print('All LorenzCOM connections detected ' )
@@ -64,8 +82,12 @@ def createLorenzSerials(LorenzCOM):
         #print list of Lorenz's serial ports
         #print( 'LorenzSerials = ', LorenzSerials ) 
             
-# To send command by Speed Optimized Polling Mode with threading
+
 def Thread_send_polling(LorenzSerials):
+    """
+    To send command by Speed Optimized Polling Mode with threading
+
+    """
     poll_start = [ 0x02, 0x5A, 0x01, 0xFF, 0x01, 0x01, 0x5C, 0xC7 ]
     poll_stop = [ 0x46 ]
     read_a = [ 0x41 ]
@@ -82,8 +104,12 @@ def Thread_send_polling(LorenzSerials):
     LorenzSerials.close()
     print ('\t numero  = ',numero)
 
-# To send command by Speed Optimized Polling Mode with threading
+
 def orderd_Thread_send_polling(lock,LorenzSerial):
+    """
+    To send command by Speed Optimized Polling Mode with threading
+
+    """
     poll_start = [ 0x02, 0x5A, 0x01, 0xFF, 0x01, 0x01, 0x5C, 0xC7 ]
     poll_stop = [ 0x46 ]
     read_a = [ 0x41 ]
@@ -104,6 +130,10 @@ def orderd_Thread_send_polling(lock,LorenzSerial):
     lock.release()
 
 def ordered_threading():
+    """
+    Call the orderd_Thread_send_polling for threading
+
+    """
     t5 = time.perf_counter() 
     for LorenzSerial in LorenzSerials:
         t1 = threading.Thread(target = orderd_Thread_send_polling, args = (lock,LorenzSerial))
@@ -116,6 +146,14 @@ def ordered_threading():
 
 # To send command by Speed Optimized Polling Mode without threading
 def send_polling(LorenzSerials):
+    """
+    Gets sensor values from the Lorenz sensor and print the values on the console
+
+    :param LorenzSerials: (list of objects) LorenzSerials objects
+
+    :return: (int) sensor value 
+
+    """
     poll_start = [ 0x02, 0x5A, 0x01, 0xFF, 0x01, 0x01, 0x5C, 0xC7 ]
     poll_stop = [ 0x46 ]
     read_a = [ 0x41 ]
@@ -138,13 +176,41 @@ def send_polling(LorenzSerials):
     print(f'Without Threading Finished in {t2-t1} seconds')
 
 def caller(func, args):
+    """
+    Second caller funtion for TASKS list
+    Calls the function passed to the TASKS list
+
+    :param function_name: (function) function to be called
+    :param args: (tuple) parameters
+    :return: result
+
+    """
     result = func(*args)
     return result
 
 def callerstar(args):
+    """
+    First caller function for TASKS list
+    Accepts a tuple of two args parameters
+
+    :param args: (object) LorenzSerial object
+    :param args: (int) a = 0 by default
+
+    :return: (function) caller function 
+
+    """
     return caller(*args)
 
 def process_send_rand(LorenzSerial,a):
+    """
+    Gets sensor values from the Lorenz sensor
+
+    :param args: (object) LorenzSerial object
+    :param args: (int) a = 0 by default
+
+    :return: (int) sensor value 
+
+    """
     poll_start = [ 0x02, 0x5A, 0x01, 0xFF, 0x01, 0x01, 0x5C, 0xC7 ]
     poll_stop = [ 0x46 ]
     read_a = [ 0x41 ]
@@ -162,6 +228,13 @@ def process_send_rand(LorenzSerial,a):
 
 # Testing the way to order a pool process
 def test_ordered_pool():
+    """
+    Start polling values from the sensors in parallel but with multiple methods
+
+    :param core_number: (int) number of cores to use for parallel processing by default = 4
+    :return: (list of int) four sensor values
+
+    """
     with multiprocessing.Pool(4) as pool:
         #
         # Tests

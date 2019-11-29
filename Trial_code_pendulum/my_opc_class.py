@@ -1,18 +1,24 @@
+"""
+Class for Handling all OPC UA communications between PLC and PC
+
+"""
+
 from opcua import Client
 from opcua import ua
 import time
 
-'''
-url = "opc.tcp://192.168.142.197:4840"
 
-opc_client = Client(url)
-
-opc_client.connect()
-print(" opc_client Connected ...")
-'''
 
 class Opc_Client():
+    """
+    Client Class Object
+    """
     def __init__(self, end_point_url = "opc.tcp://192.168.142.197:4840" ):
+        """
+        Initialising the client 
+        :param end_point_url: (string) url of opc server by default = "opc.tcp://192.168.142.197:4840"
+
+        """
         self.end_point_url = end_point_url
         self.opc_client = Client( end_point_url )
         self.pressure_node_1 = None
@@ -26,6 +32,7 @@ class Opc_Client():
     def connect(self):
         '''
         To connect to the server defined at end_point_url
+
         '''
         self.opc_client.connect()
         print(" opc_client is successfully connected at {} ...".format( self.end_point_url ) )
@@ -33,6 +40,11 @@ class Opc_Client():
         print(" List of nodes connected to ... \n \n{} \n{} \n{} \n{}\n".format( list[0] , list[1] , list[2] , list[3] ) )
 
     def get_pressure_nodes(self):
+        """
+        Gets the four pressure nodes
+        :return: (list of nodes) pressure nodes
+
+        """
         self.pressure_node_1 = self.opc_client.get_node("ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v1")
         self.pressure_node_2 = self.opc_client.get_node("ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v2")
         self.pressure_node_3 = self.opc_client.get_node("ns=2;s=|var|CPX-CEC-S1-V3.Application.G.v3")
@@ -44,7 +56,8 @@ class Opc_Client():
         '''
         To collect all the four pressures that is output of the FESTO valves in mbar
 
-        Return list of four pressures
+        :return: (list of int) four pressure values
+
         '''
         # t1 = time.perf_counter()
         pressure_reading1 = self.pressure_node_1.get_value()
@@ -77,6 +90,8 @@ class Opc_Client():
         https://github.com/FreeOpcUa/python-opcua/blob/master/examples/client-minimal.py
         To set value you need to know the dataValue and type to send in the values of same variant type and datavalue
 
+        :param pressure_values: (list of int) four pressure values
+
         '''
         if len(pressure_values) == 4:
             for node, pressure_value in zip(self.pressure_node_list, pressure_values):
@@ -86,14 +101,25 @@ class Opc_Client():
                 node.set_value(ua.Variant(pressure_value, ua.VariantType.Int16))
 
     def close(self):
+        """
+        Disconnect the opc client
+
+        """
         self.opc_client.disconnect()
         print( " OPC Client is Successfully disconnected....." )
 
 
-if __name__ == "__main__":
+def main():
+    """
+    Example of use of opc class
+
+    """
     my_client = Opc_Client()
 
     for i in range(10):
         my_pressures_readings = my_client.collecting_pressures()
 
     my_client.close()
+
+if __name__ == "__main__":
+    main()

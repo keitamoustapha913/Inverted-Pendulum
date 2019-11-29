@@ -1,6 +1,8 @@
 '''
-https://www.tutorialspoint.com/writing-files-in-background-in-python
-15 Nov 2019
+This is file class to write and read files 
+
+Reference : https://www.tutorialspoint.com/writing-files-in-background-in-python
+Started 15 Nov 2019 by keita Mouhamed Moustapha
 
 '''
 
@@ -10,19 +12,33 @@ import csv
 
 class AsyncWrite(threading.Thread):
       '''
-      To write data to file in the background
+      Class instance declaration for background writing
+
       '''
-      def __init__(self, text, filename):
+      def __init__(self, text, filename):             
+         '''
+         Initialise data to file in the background 
+         :param text: (string) text message to be written
+         :param filename: (string) filename with ext like .csv , .txt
+         :return: None
+
+         '''
          threading.Thread.__init__(self)
          self.text = text
          self.filename = filename
       def run(self):
+         """
+         To Write the text to filename.ext in the background
+         """
          with open(self.filename, 'a') as csv_file:
             csv_writer = csv.writer(csv_file, delimiter=',')
             csv_writer.writerow(self.text)
 
 
 def Main():
+   """
+   A sample code to show the use of AsyncWrite class
+   """
    message = input("Enter a string to store:" )
    background = AsyncWrite(message,'filename.txt')
    #print threading.enumerate()
