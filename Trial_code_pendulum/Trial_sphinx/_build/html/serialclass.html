@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>serialclass module &#8212; Trial Code of Inverted Pendulum 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="usingthreading module" href="usingthreading.html" />
+    <link rel="prev" title="my_opc_class module" href="my_opc_class.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="usingthreading.html" title="usingthreading module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="my_opc_class.html" title="my_opc_class module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Trial Code of Inverted Pendulum 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" accesskey="U">Trial_code_pendulum</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-serialclass">
+<span id="serialclass-module"></span><h1>serialclass module<a class="headerlink" href="#module-serialclass" title="Permalink to this headline">¶</a></h1>
+<p>Class to Handle all Serial communication between Lorenz Sensors and the PC</p>
+<p># <a class="reference external" href="https://stackoverflow.com/questions/25382455/python-notimplementederror-pool-objects-cannot-be-passed-between-processes">https://stackoverflow.com/questions/25382455/python-notimplementederror-pool-objects-cannot-be-passed-between-processes</a>
+__getstate__ is always called prior to pickling an object, and allow you to specify exactly which pieces of the object’s state should actually be pickled. 
+Then upon unpickling, __setstate__(state) will be called if its implemented (it is in our case), or if it’s not, the dict returned by __getstate__ will be used as the __dict__ for the unpickled instance. 
+In the above example, we’re explicitly setting __dict__ to the dict we returned in __getstate__, but we could have just not implemented __setstate__ and gotten the same effect.</p>
+<dl class="class">
+<dt id="serialclass.polling_serial">
+<em class="property">class </em><code class="sig-prename descclassname">serialclass.</code><code class="sig-name descname">polling_serial</code><span class="sig-paren">(</span><em class="sig-param">LorenzSerials</em><span class="sig-paren">)</span><a class="headerlink" href="#serialclass.polling_serial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Polling class for SOPM of data from the sensors by multiprocessing module approach</p>
+<dl class="method">
+<dt id="serialclass.polling_serial.caller">
+<code class="sig-name descname">caller</code><span class="sig-paren">(</span><em class="sig-param">func</em>, <em class="sig-param">args</em><span class="sig-paren">)</span><a class="headerlink" href="#serialclass.polling_serial.caller" title="Permalink to this definition">¶</a></dt>
+<dd><p>Second caller funtion for TASKS list
+Calls the function passed to the TASKS list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>function_name</strong> – (function) function to be called</p></li>
+<li><p><strong>args</strong> – (tuple) parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>result</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="serialclass.polling_serial.callerstar">
+<code class="sig-name descname">callerstar</code><span class="sig-paren">(</span><em class="sig-param">args</em><span class="sig-paren">)</span><a class="headerlink" href="#serialclass.polling_serial.callerstar" title="Permalink to this definition">¶</a></dt>
+<dd><p>First caller function for TASKS list
+Accepts a tuple of two args parameters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> – (object) LorenzSerial object</p></li>
+<li><p><strong>args</strong> – (int) a = 0 by default</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(function) caller function</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="serialclass.polling_serial.ordered_pool">
+<code class="sig-name descname">ordered_pool</code><span class="sig-paren">(</span><em class="sig-param">core_number=4</em><span class="sig-paren">)</span><a class="headerlink" href="#serialclass.polling_serial.ordered_pool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start polling values from the sensors in parallel</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>core_number</strong> – (int) number of cores to use for parallel processing by default = 4</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(list of int) four sensor values</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="serialclass.polling_serial.ordered_pools">
+<code class="sig-name descname">ordered_pools</code><span class="sig-paren">(</span><em class="sig-param">core_number=4</em><span class="sig-paren">)</span><a class="headerlink" href="#serialclass.polling_serial.ordered_pools" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start polling values from the sensors in parallel but with multiple methods</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>core_number</strong> – (int) number of cores to use for parallel processing by default = 4</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(list of int) four sensor values</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="serialclass.polling_serial.process_send_rand">
+<code class="sig-name descname">process_send_rand</code><span class="sig-paren">(</span><em class="sig-param">LorenzSerial</em>, <em class="sig-param">a=0</em><span class="sig-paren">)</span><a class="headerlink" href="#serialclass.polling_serial.process_send_rand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets sensor values from the Lorenz sensor</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> – (object) LorenzSerial object</p></li>
+<li><p><strong>args</strong> – (int) a = 0 by default</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(int) sensor value</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="my_opc_class.html"
+                        title="previous chapter">my_opc_class module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="usingthreading.html"
+                        title="next chapter">usingthreading module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/serialclass.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="usingthreading.html" title="usingthreading module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="my_opc_class.html" title="my_opc_class module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Trial Code of Inverted Pendulum 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >Trial_code_pendulum</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Keita Mouhamed Moustapha.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.1.
+    </div>
+  </body>
+</html>
