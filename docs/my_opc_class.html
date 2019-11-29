@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>my_opc_class module &#8212; Trial Code of Inverted Pendulum 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="serialclass module" href="serialclass.html" />
+    <link rel="prev" title="fileclass module" href="fileclass.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="serialclass.html" title="serialclass module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="fileclass.html" title="fileclass module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Trial Code of Inverted Pendulum 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" accesskey="U">Trial_code_pendulum</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-my_opc_class">
+<span id="my-opc-class-module"></span><h1>my_opc_class module<a class="headerlink" href="#module-my_opc_class" title="Permalink to this headline">¶</a></h1>
+<p>Class for Handling all OPC UA communications between PLC and PC</p>
+<dl class="class">
+<dt id="my_opc_class.Opc_Client">
+<em class="property">class </em><code class="sig-prename descclassname">my_opc_class.</code><code class="sig-name descname">Opc_Client</code><span class="sig-paren">(</span><em class="sig-param">end_point_url='opc.tcp://192.168.142.197:4840'</em><span class="sig-paren">)</span><a class="headerlink" href="#my_opc_class.Opc_Client" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Client Class Object</p>
+<dl class="method">
+<dt id="my_opc_class.Opc_Client.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#my_opc_class.Opc_Client.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disconnect the opc client</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="my_opc_class.Opc_Client.collecting_pressures">
+<code class="sig-name descname">collecting_pressures</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#my_opc_class.Opc_Client.collecting_pressures" title="Permalink to this definition">¶</a></dt>
+<dd><p>To collect all the four pressures that is output of the FESTO valves in mbar</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(list of int) four pressure values</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="my_opc_class.Opc_Client.connect">
+<code class="sig-name descname">connect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#my_opc_class.Opc_Client.connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>To connect to the server defined at end_point_url</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="my_opc_class.Opc_Client.get_pressure_nodes">
+<code class="sig-name descname">get_pressure_nodes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#my_opc_class.Opc_Client.get_pressure_nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the four pressure nodes
+:return: (list of nodes) pressure nodes</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="my_opc_class.Opc_Client.send_pressures">
+<code class="sig-name descname">send_pressures</code><span class="sig-paren">(</span><em class="sig-param">pressure_values=[0, 0, 0, 0]</em><span class="sig-paren">)</span><a class="headerlink" href="#my_opc_class.Opc_Client.send_pressures" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="https://github.com/FreeOpcUa/python-opcua/blob/master/examples/client-minimal.py">https://github.com/FreeOpcUa/python-opcua/blob/master/examples/client-minimal.py</a>
+To set value you need to know the dataValue and type to send in the values of same variant type and datavalue</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pressure_values</strong> – (list of int) four pressure values</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="my_opc_class.main">
+<code class="sig-prename descclassname">my_opc_class.</code><code class="sig-name descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#my_opc_class.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Example of use of opc class</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="fileclass.html"
+                        title="previous chapter">fileclass module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="serialclass.html"
+                        title="next chapter">serialclass module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/my_opc_class.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="serialclass.html" title="serialclass module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="fileclass.html" title="fileclass module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Trial Code of Inverted Pendulum 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >Trial_code_pendulum</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Keita Mouhamed Moustapha.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.1.
+    </div>
+  </body>
+</html>

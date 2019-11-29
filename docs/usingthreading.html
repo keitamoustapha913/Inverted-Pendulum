@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>usingthreading module &#8212; Trial Code of Inverted Pendulum 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="serialclass module" href="serialclass.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="serialclass.html" title="serialclass module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Trial Code of Inverted Pendulum 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" accesskey="U">Trial_code_pendulum</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-usingthreading">
+<span id="usingthreading-module"></span><h1>usingthreading module<a class="headerlink" href="#module-usingthreading" title="Permalink to this headline">¶</a></h1>
+<p>The trial of the pendulum code
+Started 12 Nov 2019 by Keita Mouhamed Moustapha</p>
+<dl class="function">
+<dt id="usingthreading.Thread_send_polling">
+<code class="sig-prename descclassname">usingthreading.</code><code class="sig-name descname">Thread_send_polling</code><span class="sig-paren">(</span><em class="sig-param">LorenzSerials</em><span class="sig-paren">)</span><a class="headerlink" href="#usingthreading.Thread_send_polling" title="Permalink to this definition">¶</a></dt>
+<dd><p>To send command by Speed Optimized Polling Mode with threading</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="usingthreading.caller">
+<code class="sig-prename descclassname">usingthreading.</code><code class="sig-name descname">caller</code><span class="sig-paren">(</span><em class="sig-param">func</em>, <em class="sig-param">args</em><span class="sig-paren">)</span><a class="headerlink" href="#usingthreading.caller" title="Permalink to this definition">¶</a></dt>
+<dd><p>Second caller funtion for TASKS list
+Calls the function passed to the TASKS list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>function_name</strong> – (function) function to be called</p></li>
+<li><p><strong>args</strong> – (tuple) parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>result</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="usingthreading.callerstar">
+<code class="sig-prename descclassname">usingthreading.</code><code class="sig-name descname">callerstar</code><span class="sig-paren">(</span><em class="sig-param">args</em><span class="sig-paren">)</span><a class="headerlink" href="#usingthreading.callerstar" title="Permalink to this definition">¶</a></dt>
+<dd><p>First caller function for TASKS list
+Accepts a tuple of two args parameters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> – (object) LorenzSerial object</p></li>
+<li><p><strong>args</strong> – (int) a = 0 by default</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(function) caller function</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="usingthreading.createLorenzSerials">
+<code class="sig-prename descclassname">usingthreading.</code><code class="sig-name descname">createLorenzSerials</code><span class="sig-paren">(</span><em class="sig-param">LorenzCOM</em><span class="sig-paren">)</span><a class="headerlink" href="#usingthreading.createLorenzSerials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a list of lorenz serial handles from the found COMs
+:param LorenzCOM: (List of COMs) found lorenz COMs</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="usingthreading.findLorenz">
+<code class="sig-prename descclassname">usingthreading.</code><code class="sig-name descname">findLorenz</code><span class="sig-paren">(</span><em class="sig-param">portsFound</em><span class="sig-paren">)</span><a class="headerlink" href="#usingthreading.findLorenz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the Lorenz sensors’ COM from the available serial ports</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>portsFound</strong> – (list of objects) detected serial ports</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(list of COMs) found lorenz COMs</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="usingthreading.get_ports">
+<code class="sig-prename descclassname">usingthreading.</code><code class="sig-name descname">get_ports</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#usingthreading.get_ports" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all available ports</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(list of objects) detected serial ports</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="usingthreading.orderd_Thread_send_polling">
+<code class="sig-prename descclassname">usingthreading.</code><code class="sig-name descname">orderd_Thread_send_polling</code><span class="sig-paren">(</span><em class="sig-param">lock</em>, <em class="sig-param">LorenzSerial</em><span class="sig-paren">)</span><a class="headerlink" href="#usingthreading.orderd_Thread_send_polling" title="Permalink to this definition">¶</a></dt>
+<dd><p>To send command by Speed Optimized Polling Mode with threading</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="usingthreading.ordered_threading">
+<code class="sig-prename descclassname">usingthreading.</code><code class="sig-name descname">ordered_threading</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#usingthreading.ordered_threading" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call the orderd_Thread_send_polling for threading</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="usingthreading.process_send_rand">
+<code class="sig-prename descclassname">usingthreading.</code><code class="sig-name descname">process_send_rand</code><span class="sig-paren">(</span><em class="sig-param">LorenzSerial</em>, <em class="sig-param">a</em><span class="sig-paren">)</span><a class="headerlink" href="#usingthreading.process_send_rand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets sensor values from the Lorenz sensor</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> – (object) LorenzSerial object</p></li>
+<li><p><strong>args</strong> – (int) a = 0 by default</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(int) sensor value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="usingthreading.send_polling">
+<code class="sig-prename descclassname">usingthreading.</code><code class="sig-name descname">send_polling</code><span class="sig-paren">(</span><em class="sig-param">LorenzSerials</em><span class="sig-paren">)</span><a class="headerlink" href="#usingthreading.send_polling" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets sensor values from the Lorenz sensor and print the values on the console</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>LorenzSerials</strong> – (list of objects) LorenzSerials objects</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(int) sensor value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="usingthreading.test_ordered_pool">
+<code class="sig-prename descclassname">usingthreading.</code><code class="sig-name descname">test_ordered_pool</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#usingthreading.test_ordered_pool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start polling values from the sensors in parallel but with multiple methods</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>core_number</strong> – (int) number of cores to use for parallel processing by default = 4</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(list of int) four sensor values</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="serialclass.html"
+                        title="previous chapter">serialclass module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/usingthreading.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="serialclass.html" title="serialclass module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Trial Code of Inverted Pendulum 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >Trial_code_pendulum</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Keita Mouhamed Moustapha.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.1.
+    </div>
+  </body>
+</html>
