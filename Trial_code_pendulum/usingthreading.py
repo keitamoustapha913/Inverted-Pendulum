@@ -318,7 +318,7 @@ if __name__ == "__main__":
                 message.append(reading)
             
             t4 = time.perf_counter()
-            filename = 'filename_a_1_2.csv'
+            filename = 'file.csv'
             backgroundwrite = AsyncWrite(message,filename)
 
             backgroundwrite.start()
