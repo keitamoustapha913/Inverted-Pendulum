@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Trial_code_pendulum &#8212; Trial Code of Inverted Pendulum 1.0 documentation</title>
+    <title>common module &#8212; Trial Code of Inverted Pendulum 1.0 documentation</title>
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
@@ -16,8 +16,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="fileclass module" href="fileclass.html" />
-    <link rel="prev" title="Welcome to Trial Code of Inverted Pendulum’s documentation!" href="index.html" /> 
+    <link rel="prev" title="usingthreading module" href="usingthreading.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -29,12 +28,10 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="fileclass.html" title="fileclass module"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="Welcome to Trial Code of Inverted Pendulum’s documentation!"
+          <a href="usingthreading.html" title="usingthreading module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Trial Code of Inverted Pendulum 1.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Trial Code of Inverted Pendulum 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" accesskey="U">Trial_code_pendulum</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -43,17 +40,38 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="trial-code-pendulum">
-<h1>Trial_code_pendulum<a class="headerlink" href="#trial-code-pendulum" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="fileclass.html">fileclass module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="my_opc_class.html">my_opc_class module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="serialclass.html">serialclass module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usingthreading.html">usingthreading module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="common.html">common module</a></li>
+  <div class="section" id="module-common">
+<span id="common-module"></span><h1>common module<a class="headerlink" href="#module-common" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="common.PID">
+<em class="property">class </em><code class="sig-prename descclassname">common.</code><code class="sig-name descname">PID</code><span class="sig-paren">(</span><em class="sig-param">kp</em>, <em class="sig-param">kd</em>, <em class="sig-param">ki</em><span class="sig-paren">)</span><a class="headerlink" href="#common.PID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The PID controller for the inverted pendulum</p>
+<dl class="method">
+<dt id="common.PID.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param">desired_value=0</em>, <em class="sig-param">measured_value=0</em><span class="sig-paren">)</span><a class="headerlink" href="#common.PID.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computing the PID controller</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>desired_value</strong> – (int) desired_value = 0 by default</p></li>
+<li><p><strong>measured_value</strong> – (int) measured_value = 0 by default</p></li>
 </ul>
-</div>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(int) pid controller output value</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="common.main">
+<code class="sig-prename descclassname">common.</code><code class="sig-name descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#common.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>An example of the use of the PID class with live plot on Matplotlib</p>
+</dd></dl>
+
 </div>
 
 
@@ -63,15 +81,12 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="index.html"
-                        title="previous chapter">Welcome to Trial Code of Inverted Pendulum’s documentation!</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="fileclass.html"
-                        title="next chapter">fileclass module</a></p>
+  <p class="topless"><a href="usingthreading.html"
+                        title="previous chapter">usingthreading module</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/modules.rst.txt"
+      <li><a href="_sources/common.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -99,12 +114,10 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="fileclass.html" title="fileclass module"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="Welcome to Trial Code of Inverted Pendulum’s documentation!"
+          <a href="usingthreading.html" title="usingthreading module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Trial Code of Inverted Pendulum 1.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Trial Code of Inverted Pendulum 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >Trial_code_pendulum</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
